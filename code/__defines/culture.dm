@@ -11,7 +11,7 @@
 	)
 
 // Cultural IDs.
-#define FACTION_SOL_CENTRAL    "Sol Central Government"
+#define FACTION_SOL_CENTRAL    "Правительство Сола"
 #define FACTION_INDIE_CONFED  "Gilgamesh Colonial Confederation"
 #define FACTION_NANOTRASEN     "NanoTrasen"
 #define FACTION_FREETRADE      "Free Trade Union"
@@ -19,13 +19,13 @@
 #define FACTION_XYNERGY        "Xynergy"
 #define FACTION_FLEET          "SCG Fleet"
 #define FACTION_EXPEDITIONARY  "Expeditionary Corps"
-#define FACTION_PCRC           "Proxima Centauri Risk Control"
-#define FACTION_SAARE          "Strategic Assault and Asset Retention Enterprises"
+//#define FACTION_PCRC           "Proxima Centauri Risk Control"
+//#define FACTION_SAARE          "Strategic Assault and Asset Retention Enterprises"
 #define FACTION_CORPORATE       "Expeditionary Corps Organisation"
 #define FACTION_DAIS           "Deimos Advanced Information Systems"
 #define FACTION_OTHER          "Other Faction"
 #define FACTION_TEST_SUBJECTS  "Test Subjects"
-#define FACTION_SPACECOPS  "Sol Federal Police"
+//#define FACTION_SPACECOPS  "Sol Federal Police"
 
 #define HOME_SYSTEM_EARTH      "Earth"
 #define HOME_SYSTEM_LUNA       "Luna"
@@ -34,7 +34,7 @@
 #define HOME_SYSTEM_CERES      "Ceres"
 #define HOME_SYSTEM_PLUTO      "Pluto"
 #define HOME_SYSTEM_TAU_CETI   "Ceti Epsilon"
-#define HOME_SYSTEM_HELIOS	   "Gauss"  // INF  Eos -> Gauss ~ Drakon
+#define HOME_SYSTEM_HELIOS	   "Eos"
 #define HOME_SYSTEM_TERRA 	   "Terra"
 #define HOME_SYSTEM_TERSTEN    "Tersten"
 #define HOME_SYSTEM_LORRIMAN   "Lorriman"

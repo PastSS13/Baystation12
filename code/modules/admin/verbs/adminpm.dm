@@ -123,6 +123,7 @@
 		receiver_message += ": <span class='message linkify'>[msg]</span>"
 	receiver_message += "</span></span>"
 	to_chat(C, receiver_message)
+	webhook_send_pm(src.key, C.key, msg)
 
 	//play the receiving admin the adminhelp sound (if they have them enabled)
 	//non-admins shouldn't be able to disable this

@@ -55,15 +55,16 @@
 #define FACTION_GRAYSON         "Grayson Manufactories Ltd."
 #define FACTION_AERTHER         "Aether Atmospherics and Recycling"
 //#define FACTION_SAARE           "Strategic Assault and Asset Retention Enterprises"  // BS12 has own FACTION_SAARE ~SidVeld
-#define FACTION_MAJOR_BILL      "Major Bill's"
+#define FACTION_MAJOR_BILL      "Тайрелл corp"
 #define FACTION_FOCAL_POINT     "Focal Point Energistics"
 #define FACTION_XION            "Xion Industrial"
 #define FACTION_VEY_MED         "Vey-Med"
 #define FACTION_BISHOP          "Bishop Cybernetics"
 #define FACTION_MORPHEUS        "Morpheus Cyberkinetics"
-#define FACTION_ZPCI            "Zone Protection Control Inc."
+//#define FACTION_ZPCI            "Zone Protection Control Inc."
 //#define FACTION_SCP             "Security Corporate Personal"
 #define FACTION_SEPTENERGO      "SeptEnergo Public Joint-Stock Company"
+
 
 #define FACTION_ABDUCTOR        "Mothership"
 #define CULTURE_ABDUCTOR_A      "Mothership Agent"

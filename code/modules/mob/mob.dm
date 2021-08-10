@@ -419,7 +419,7 @@
 			return "<span class='notice'>[copytext_preserve_html(msg, 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a></span>"
 
 /client/verb/changes()
-	set name = "Baystation12 Changelog"
+	set name = "Bay Changelog"
 	set category = "OOC"
 	getFiles(
 		'html/88x31.png',

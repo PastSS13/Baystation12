@@ -1,11 +1,11 @@
 #if !defined(using_map_DATUM)
 
 	#include "sierra_announcements.dm"
-	#include "sierra_antagonism.dm"
+//	#include "sierra_antagonism.dm"
 	#include "sierra_areas.dm"
 	#include "sierra_elevator.dm"
 	#include "sierra_holodecks.dm"
-	#include "sierra_lobby.dm"
+	#include "sierra_lobby1.dm"
 	#include "sierra_npcs.dm"
 	#include "sierra_overmap.dm"
 	#include "sierra_presets.dm"
@@ -29,7 +29,6 @@
 	#include "datums/reports/deck.dm"
 	#include "datums/reports/engineering.dm"
 	#include "datums/reports/exploration.dm"
-	#include "datums/reports/general.dm"
 	#include "datums/reports/iaa.dm"
 	#include "datums/reports/medical.dm"
 	#include "datums/reports/security.dm"
@@ -40,8 +39,8 @@
 	#include "datums/supplypacks/security.dm"
 	#include "datums/supplypacks/science.dm"
 
-	#include "game/antagonist/languages.dm"
-	#include "game/antagonist/objective.dm"
+//	#include "game/antagonist/languages.dm"
+//	#include "game/antagonist/objective.dm"
 
 	#include "items/cards_ids.dm"
 	#include "items/documents.dm"
@@ -137,7 +136,7 @@
 	#include "../away_inf/yacht/yacht.dm"
 //	#include "../away_inf/ascent/ascent.dm"
 //	#include "../away_inf/skrellscoutship/skrellscoutship.dm"
-//  #include "../away_inf/tajsc/tajsciship.dm"
+ //   #include "../away_inf/tajsc/tajsciship.dm"
 
 	#include "../away/casino/casino.dm"
 	#include "../away/derelict/derelict.dm"

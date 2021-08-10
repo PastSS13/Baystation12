@@ -217,12 +217,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	shoes = /obj/item/clothing/shoes/jackboots
 	id_types = list(/obj/item/card/id/sierra/crew/security)
 
-/decl/hierarchy/outfit/job/sierra/crew/security/assist
-	name = OUTFIT_JOB_NAME("Cadet - Sierra")
-	uniform = /obj/item/clothing/under/rank/security/cadet
-	shoes = /obj/item/clothing/shoes/jackboots
-	id_types = list(/obj/item/card/id/sierra/crew/security/cadet)
-
 	///////////
 	//MEDICAL//
 	///////////
@@ -426,7 +420,6 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	name = OUTFIT_JOB_NAME("Expeditionary Pilot")
 	uniform = /obj/item/clothing/under/rank/field
 	id_types = list(/obj/item/card/id/sierra/crew/pilot)
-	l_ear = /obj/item/device/radio/headset/headset_pilot
 
 /decl/hierarchy/outfit/job/sierra/crew/exploration/medic
 	name = OUTFIT_JOB_NAME("Field Medic")

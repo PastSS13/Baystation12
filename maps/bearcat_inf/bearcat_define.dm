@@ -1,16 +1,16 @@
 /datum/map/bearcat
-	name = "Bearcat"
-	full_name = "FTV Bearcat"
+	name = "Faraon"
+	full_name = "FTV Faraon"
 	path = "bearcat_inf"
 
-	station_name  = "FTV Bearcat"
-	station_short = "Bearcat"
+	station_name  = "FTV Faraon"
+	station_short = "Faraon"
 
 	dock_name     = "FTS Capitalist's Rest"
-	boss_name     = "FTU Merchant Navy"
-	boss_short    = "Merchant Admiral"
-	company_name  = "Legit Cargo Ltd."
-	company_short = "LC"
+	boss_name     = "Tayrell corp"
+	boss_short    = "Tayrell"
+	company_name  = "Nano and Tayrell."
+	company_short = "TR"
 	overmap_event_areas = 11
 
 	player_levels = list(1,2,3)
@@ -18,7 +18,7 @@
 
 	evac_controller_type = /datum/evacuation_controller/lifepods //don't remove
 	evac_controller_type = /datum/evacuation_controller/starship //don't remove
-	lobby_screens = list("spess","aesthetic")
+
 
 	allowed_spawns = list("Cryogenic Storage")
 	default_spawn = "Cryogenic Storage"
@@ -28,16 +28,16 @@
 
 //	minimum_players = 0 its already 0
 
-	welcome_sound = 'sound/effects/cowboysting.ogg'
+	welcome_sound = 'sound/effects/cascade.ogg'
 
-	map_admin_faxes = list("FTU Merchant Office")
+	map_admin_faxes = list("Tayrell and NT corp")
 
 	starting_money = 5000
 	department_money = 0
 	salary_modifier = 0.2
 
 /datum/map/bearcat/map_info(victim)
-	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>, независимого дочернего судна\ Вольного Торгового Союза \
+	to_chat(victim, "Вы находитесь на борту <b>[station_name]</b>,дочернего судна\ Тайрелл и НТ корпораций \
 	на границе исследованного космоса.")
 	to_chat(victim, "На настоящий момент, межзвездные корпорации и государства не включили в свою зону влияния \
 	планеты и астероиды в данном секторе, так что, исследуйте и наживайтесь сколько влезет - добывайте минералы; \

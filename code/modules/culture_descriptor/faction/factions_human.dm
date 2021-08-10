@@ -14,8 +14,8 @@
 /decl/cultural_info/faction/scg/fleet
 	name = FACTION_FLEET
 	description = "Флот является основным компонентом Сил обороны ЦПСС. Он обеспечивает защиту пространства ЦПСС \
-	от пиратов, контрабандистов, и вокс-рейдеров. Последним серьезным военным сражением стал Гайский Конфликт \
-	более 10 лет назад. Флот считает себя вершиной военной сферы человечества, но имеет тенденцию игнорировать \
+	от пиратов, контрабандистов, и вокс-рейдеров. \
+ Флот считает себя вершиной военной сферы человечества, но имеет тенденцию игнорировать \
 	некоторые правила для простоты. Он хорошо финансируется, но считается самодовольным и брезгучим. До \
 	недавнего времени у Флота не было серьезного противника, с которым можно было бы потягаться, но в целом его \
 	уважает народ за его работу по сдерживанию пиратов и воксов. В настоящее время проводится капитальный ремонт \
@@ -49,9 +49,7 @@
 	Из-за богатых минеральных месторождений в их центральных системах и инвестиций в ранние мегакорпорации в ходе \
 	колонизации Гильгамеша, производственная промышленность расширилась до размеров доминирующей в экономики \
 	Конфедерации, так на неё приходится 40% всего национального ВВП. Самой крупнейшей отраслью промышленности \
-	является производство вооружения. И без того тяжелые отношения между ТКК и ЦПСС усугубились захватнической \
-	политикой первой, а аннексия Гайи привела к Гайскому Конфликту в 2292 году, который закончился Пирровой \
-	победой ЦПСС в 2296 году."
+	является производство вооружения."
 	economic_power = 0.9
 	subversive_potential = 50
 
@@ -67,6 +65,7 @@
 	старше может подписать двухлетний контракт. Кандидаты в офицеры должны иметь как минимум степень бакалавра в \
 	соответствующей области (астрология, инженерия, ксеноархеология и т.д.)."
 
+/*
 /decl/cultural_info/faction/police
 	name = FACTION_SPACECOPS
 	description = "The Sol Federal (SFP) is a government law enforcement agency tasked with enforcing Sol Central Government law, \
@@ -74,7 +73,8 @@
 	Some Agents embedded with other organizations (e.g. an <l>Expeditionary Corps</l> ship) and are expected to answer to their superiours from those organizations. \
 	Notable units are Organized Crime & Vice (self-explanatory), Territory Support (ports of entry and helping local law enforcement), \
 	Special Investigations (sensitive and urgent cases) and Fugitive Recovery Division (for when local authorities are unable or unwilling to arrest someone). \
-	The contractor SFP Trackers are also used find and arrest low-profile fugitives from justice."
+	The contractor SFP Trackers are also used find and arrest low-profile fugitives from justice."=
+ */
 
 /decl/cultural_info/faction/remote/nanotrasen
 	name = FACTION_NANOTRASEN
@@ -128,24 +128,7 @@
 	economic_power = 1.3
 	subversive_potential = 15
 
-/decl/cultural_info/faction/pcrc
-	name = FACTION_PCRC
-	description = "Proxima Centauri Risk Control (PCRC) является одной из крупнейших компаний по обеспечению \
-	безопасности на территории ЦПСС. PCRC заключает контракты с многочисленными государствами, частными и \
-	корпоративными компаниями и предоставляет широкий спектр услуг, от экспертных услуг в сфере защиты активов, \
-	управления рисками, правоохранения до сбора и предотвращения потерь секретной информации. Это относительно \
-	мирная и новая компания, которая быстро зарекомендовала себя как надежный и эффективный поставщик решений \
-	вопросов безопасности, что часто ставит компанию в противоречие с основным конкурентом - SAARE."
-	subversive_potential = 15
 
-/decl/cultural_info/faction/saare
-	name = FACTION_SAARE
-	description = "SAARE (Strategic Assault and Asset Retention Enterprises) is a quickly growing Private Military Corporation catering to large \
-	firms requiring discrete military and private security services. The company has taken to hiring skilled veterans from both private and public \
-	military services but have begun instituting training programs to breed their own operatives for the future. Typical assignments for SAARE \
-	contractors include private law enforcement, ship escort, location security, VIP escort, and VIP or asset recovery. In the last decade, the \
-	company has recently signed onto a number of contracts with NanoTrasen to complement their own Asset Protection forces."
-	subversive_potential = 15
 
 /decl/cultural_info/faction/dais
 	name = FACTION_DAIS

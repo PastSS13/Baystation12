@@ -2,7 +2,7 @@
 
 /obj/item/card/id/sierra
 	name = "identification card"
-	desc = "An identification card issued to personnel aboard the NSV Sierra."
+	desc = "An identification card issued to personnel aboard the Nexus."
 	job_access_type = /datum/job/assistant
 
 /obj/item/card/id/sierra/silver
@@ -21,17 +21,17 @@
 
 // NanoTrasen Personnel and Passengers
 /obj/item/card/id/sierra/passenger
-	desc = "An identification card issued to passengers aboard the NSV Sierra."
+	desc = "An identification card issued to passengers aboard the Nexus."
 	job_access_type = /datum/job/assistant
 	color = "#ccecff"
 
 /obj/item/card/id/sierra/crew
-	desc = "An identification card issued to NanoTrasen crewmembers aboard the NSV Sierra."
+	desc = "An identification card issued to Taurell crewmembers aboard the Nexus."
 	job_access_type = /datum/job/assistant
 	color = "#ccecff"
 
 /obj/item/card/id/sierra/crew/medical
-	desc = "An identification card issued to medical crewmembers aboard the NSV Sierra."
+	desc = "An identification card issued to Taurell medical members aboard the Nexus."
 	job_access_type = /datum/job/doctor
 	detail_color = COLOR_PALE_BLUE_GRAY
 
@@ -59,12 +59,9 @@
 	extra_details = list("onegoldstripe")
 
 /obj/item/card/id/sierra/crew/security
-	desc = "An identification card issued to asset protection depatment's personnel aboard the NSV Sierra."
+	desc = "An identification card issued to judge's personnel aboard the Nexus."
 	job_access_type = /datum/job/officer
 	detail_color = "#e00000"
-
-/obj/item/card/id/sierra/crew/security/cadet
-	job_access_type = /datum/job/security_assistant
 
 /obj/item/card/id/sierra/crew/security/warden
 	job_access_type = /datum/job/warden
@@ -81,7 +78,7 @@
 	extra_details = list("onegoldstripe")
 
 /obj/item/card/id/sierra/crew/engineering
-	desc = "An identification card issued to engineering personnel aboard the NSV Sierra."
+	desc = "An identification card issued to Taurell crewmembers aboard the Nexus."
 	job_access_type = /datum/job/engineer
 	detail_color = COLOR_SUN
 
@@ -115,7 +112,7 @@
 
 
 /obj/item/card/id/sierra/crew/service //unused
-	desc = "An identification card issued to service personnel aboard the NSV Sierra."
+	desc = "An identification card issued to Taurell crewmembers aboard the Nexus."
 	detail_color = COLOR_CIVIE_GREEN
 
 /obj/item/card/id/sierra/crew/service/janitor
@@ -159,7 +156,7 @@
 //Research
 
 /obj/item/card/id/sierra/crew/research
-	desc = "A card issued to research personnel aboard the NSV Sierra."
+	desc = "An identification card issued to Taurell crewmembers aboard the Nexus."
 	job_access_type = /datum/job/scientist_assistant
 	detail_color = COLOR_RESEARCH
 	color = COLOR_WHITE
@@ -180,14 +177,14 @@
 	job_access_type = /datum/job/roboticist
 
 /obj/item/card/id/sierra/crew/liaison
-	desc = "A card issued to corporate represenatives aboard the NSV Sierra."
+	desc = "An identification card issued to Taurell crewmembers aboard the Nexus."
 	job_access_type = /datum/job/iaa
 	color = COLOR_GRAY40
 	detail_color = COLOR_COMMAND_BLUE
 	extra_details = list("onegoldstripe")
 
 /obj/item/card/id/sierra/crew/adjutant
-	desc = "A card issued to command's support personnel aboard the NSV Sierra."
+	desc = "An identification card issued to Taurell crewmembers aboard the Nexus."
 	job_access_type = /datum/job/adjutant
 	color = "#ccecff"
 	detail_color = COLOR_COMMAND_BLUE
@@ -206,7 +203,7 @@
 //Stowaway
 /*
 /obj/item/card/id/sierra/stowaway
-	desc = "An identification card issued to personnel aboard the NSV Sierra. Looks like the photo fell off this one."
+	desc = "An identification card issued to personnel aboard the Nexus. Looks like the photo fell off this one."
 	job_access_type = /datum/job/stowaway
 	color = "#b4cbd7"
 

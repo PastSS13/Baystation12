@@ -40,6 +40,7 @@
 	GLOB.admin_log.Add(text)
 	if (config.log_admin)
 		game_log("ADMIN", text)
+	webhook_send_garbage(text)
 //		send2adminirc(text, 1)//inf
 
 /proc/log_debug(text)
@@ -103,6 +104,7 @@
 /proc/log_adminwarn(text)
 	if (config.log_adminwarn)
 		game_log("ADMINWARN", text)
+	webhook_send_garbage(text)
 
 /proc/log_permissions(text)
 	if (config.log_permissions)
@@ -128,6 +130,7 @@
 //This replaces world.log so it displays both in DD and the file
 /proc/log_world(text)
 	to_world_log(text) //this comes before the config check because it can't possibly runtime
+	webhook_send_runtime(text)
 	if(config.log_world_output)
 		game_log("DD_OUTPUT", text)
 

@@ -1,4 +1,4 @@
-/var/server_name = "Infinity RU"
+/var/server_name = "NEXT DAY RP"
 
 //inf #define RECOMMENDED_VERSION 513 // Определено в code/_macros_inf.dm и используется там же
 #define FAILED_DB_CONNECTION_CUTOFF 25
@@ -27,6 +27,15 @@ GLOBAL_VAR(href_logfile)
 		game_id = "[c[(t % l) + 1]][game_id]"
 		t = round(t / l)
 	return 1
+
+proc/valid_webhook(input)
+	var/list/data = params2list(input)
+	if(!config.webhook_url || !config.webhook_key || !("key" in data))
+		return FALSE
+	if(data["key"]!=config.webhook_key)
+		return FALSE
+	return data
+
 
 // Find mobs matching a given string
 //
@@ -99,7 +108,7 @@ GLOBAL_VAR(href_logfile)
 	diary = file("data/logs/[date_string].log")
 	to_file(diary, "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(world.timeofday, "hh:mm.ss")][log_end]\n---------------------[log_end]")
 
-	GLOB.changelog_hash_infinity = md5('html/changelog_infinity.html')
+
 
 	if(config && config.server_name != null && config.server_suffix && world.port > 0)
 		config.server_name += " #[(world.port % 1000) / 100]"
@@ -248,6 +257,42 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 			L["revision"] = "unknown"
 
 		return list2params(L)
+
+	else if(T == "who")
+		var/msg = "Текущие игроки:\n"
+		var/n = 0
+		for(var/client/C in GLOB.clients)
+			n++
+			msg += "\t[C.key]\n"
+		msg += "Всего: [n]"
+		return msg
+
+	else if(T == "adminwho")
+		var/msg = "Педали:\n"
+		for(var/client/C in GLOB.admins)
+			msg += "\t[C] - [C.holder.rank]"
+			msg += "\n"
+		return msg
+
+	/* * * * * * * *
+	* Discord Bot Topic Calls
+	* * * * * * * */
+
+	else if(copytext(T,1,5) == "asay")
+		if(!valid_webhook(T))
+			return
+		var/list/input = valid_webhook(T)
+		for(var/client/C in GLOB.admins)
+			if(R_ADMIN & C.holder.rights)
+				to_chat(C, "<span class='admin_channel'>" + create_text_tag("admin", "ADMIN:", C) + " <span class='name'>[input["admin"]]</span>(DISCORD): <span class='message'>[input["asay"]]</span></span>")
+
+	else if(copytext(T,1,4) == "ooc")
+		if(!valid_webhook(T))
+			return
+		var/list/input = valid_webhook(T)
+		for(var/client/C in GLOB.clients)
+			to_chat(C, "<span class='ooc'><span class='everyone'>" + create_text_tag("dooc", "Discord -> DOOC:", C) + " <EM>[input["ckey"]]:</EM> <span class='message'>[input["ooc"]]</span></span></span>")
+
 
 	/* * * * * * * *
 	* Admin Topic Calls
@@ -570,11 +615,11 @@ GLOBAL_VAR_INIT(world_topic_last, world.timeofday)
 //	s += "[game_version]"
 //	s += "Forum"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 //	s += "</a>|"
-	s += "<a href=\"https://discord.gg/N4atUkH\">"
+	s += "<a href=\"https://discord.gg/RAfDfcmRK8\">"
 	s += "Discord"
 	s += "</a>"
 	s += ")"
-	s += " A medium/hard RP server with modified Bay12 code."
+	s += " A FULL RP russian server with modified Bay12 code."
 //	s += "<br><b>Map:</b> [station_name()]"
 	var/n = 0
 	for (var/mob/M in GLOB.player_list)

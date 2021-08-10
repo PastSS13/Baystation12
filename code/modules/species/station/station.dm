@@ -240,20 +240,20 @@
 			FACTION_HEPHAESTUS,
 			FACTION_XYNERGY,
 			FACTION_EXPEDITIONARY,
-			FACTION_PCRC,
+	//		FACTION_PCRC,
 			FACTION_CORPORATE,
 			FACTION_DAIS,
 			FACTION_ZENG_HU,
 			FACTION_WARD_TAKAHASHI,
 			FACTION_GRAYSON,
 			FACTION_AERTHER,
-			FACTION_SAARE,
+		//	FACTION_SAARE,
 			FACTION_MAJOR_BILL,
 			FACTION_FOCAL_POINT,
 			FACTION_XION,
 			FACTION_VEY_MED,
 			FACTION_BISHOP,
-			FACTION_ZPCI,
+		//	FACTION_ZPCI,
 			FACTION_SEPTENERGO,
 			FACTION_SKRELL_QERRVOAL,
 			FACTION_SKRELL_QALAOA,
@@ -311,14 +311,14 @@
 	else if (effective_dose > 10)
 		M.vomit(4, 2, rand(3 SECONDS, 10 SECONDS))
 	else
-		M.vomit(1, 1, rand(5 SECONDS, 15 SECONDS))	
+		M.vomit(1, 1, rand(5 SECONDS, 15 SECONDS))
 
 /datum/species/skrell/get_sex(var/mob/living/carbon/human/H)
 	return istype(H) && (H.descriptors["headtail length"] == 1 ? MALE : FEMALE)
 
 /datum/species/skrell/check_background()
 	return TRUE
-	
+
 /datum/species/skrell/can_float(mob/living/carbon/human/H)
 	if(!H.is_physically_disabled())
 		if(H.encumbrance() < 2)

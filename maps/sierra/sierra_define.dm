@@ -1,6 +1,6 @@
 /datum/map/sierra
-	name = "Sierra"
-	full_name = "NSV Sierra"
+	name = "Nexus"
+	full_name = "Nexus"
 	path = "sierra"
 	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 
@@ -17,19 +17,17 @@
 	allowed_spawns = list("Cryogenic Storage", "Cyborg Storage")
 	default_spawn = "Cryogenic Storage"
 
-	station_name  = "NSV Sierra"
-	station_short = "Sierra"
+	station_name  = "Nexus"
+	station_short = "Nexus"
 	dock_name     = "TBD"
 	boss_name     = "Central Command"
 	boss_short    = "Centcomm"
-	company_name  = "NanoTrasen"
-	company_short = "NT"
+	company_name  = "Taurell"
+	company_short = "TR"
 
-	map_admin_faxes = list("NanoTrasen Central Office")
+	map_admin_faxes = list("Taurell Central Office")
 
 	evac_controller_type = /datum/evacuation_controller/starship/fast
-
-	lockdown_support = TRUE
 
 	default_law_type = /datum/ai_laws/nanotrasen
 	use_overmap = 1
@@ -40,6 +38,8 @@
 
 	away_site_budget = 5.5 // Было 5, увеличили на 10% вместе с уменьешением цены для одноуровневых авеек ~bear1ake
 	min_offmap_players = 10
+
+	welcome_sound = 'infinity/sound/ambience/horror_1.ogg'
 
 	id_hud_icons = 'maps/sierra/icons/assignment_hud.dmi'
 
@@ -88,9 +88,6 @@
 			FACTION_MORPHEUS,
 			FACTION_VEY_MED,
 			FACTION_ZENG_HU,
-			FACTION_ZPCI,
-			FACTION_PCRC,
-			FACTION_SAARE,
 			FACTION_XYNERGY,
 			FACTION_FREETRADE,
 			FACTION_OTHER
@@ -134,26 +131,3 @@
 			RELIGION_TAOISM
 		)
 	)
-
-	high_secure_areas = list(
-	//	"First Deck - Security - Armory",			WikiPedia's
-	//	"First Deck - Security - Armory Lobby",		Lie
-	//	"First Deck - Vault",
-	//	"AI Chamber",
-		"Second Deck - AI Upload",
-		"Second Deck - AI Upload Access")
-
-	secure_areas = list(
-		"Second Deck - Engine - Supermatter",
-		"Second Deck - Engineering - Technical Storage",
-		"Second Deck - Teleporter",
-		"First Deck - Telecoms - Storage",
-		"First Deck - Telecoms - Monitoring",
-		"First Deck - Telecoms",
-		"First Deck - EVA",
-		"Security - Brig",
-		"Security - Prison Wing",
-		"Third Deck - Hangar",
-		"Third Deck - Hangar - Atmospherics Storage",
-		"Third Deck - Water Cistern"
-		)

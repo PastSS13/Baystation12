@@ -366,8 +366,7 @@
 			if(istype(L))
 				process_heat(L)
 	wash_floor()
-	reagents.add_reagent(/datum/reagent/paint, reagents.get_free_space())
-	//inf будем мыться краской, а не водой
+	reagents.add_reagent(/datum/reagent/water, reagents.get_free_space())
 
 /obj/structure/hygiene/shower/proc/wash_floor()
 	if(!ismist && is_washing)

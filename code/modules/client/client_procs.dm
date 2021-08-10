@@ -196,7 +196,7 @@
 		prefs = new /datum/preferences(src)
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
-	apply_fps(prefs.clientfps ? prefs.clientfps : config.clientfps)
+	apply_fps(prefs.clientfps)
 
 	. = ..()	//calls mob.Login()
 
@@ -230,11 +230,6 @@
 		if(config.aggressive_changelog)
 			src.changes()
 
-	if(prefs.lastchangelog_infinity != GLOB.changelog_hash_infinity)
-		to_chat(src, "<span class='info'>You have unread updates in the Infinity changelog.</span>")
-		winset(src, "rpane.changelog_infinity", "background-color=#8053ad;font-style=bold")
-		if(config.aggressive_changelog)
-			src.changes_infinity()
 
 	if(isnum(player_age) && player_age < 7)
 		src.lore_splash()
@@ -440,7 +435,7 @@ client/verb/character_setup()
 
 /client/proc/apply_fps(var/client_fps)
 	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
-		vars["fps"] = client_fps
+		vars["fps"] = prefs.clientfps
 
 /client/MouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params)
 	. = ..()

@@ -11,21 +11,21 @@
 		/datum/species/human/mule	= list(/datum/job/ai, /datum/job/cyborg, /datum/job/submap/merchant, /datum/job/submap/merchant_trainee)
 	)
 
-#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos, /datum/job/hop, /datum/job/chief_engineer, /datum/job/rd, /datum/job/cmo, /datum/job/iaa, /datum/job/psychiatrist
+#define HUMAN_ONLY_JOBS /datum/job/captain, /datum/job/hos
 	species_to_job_blacklist = list(
 		/datum/species/unathi  		 = list(HUMAN_ONLY_JOBS/*, /datum/job/adjutant, /datum/job/senior_doctor, /datum/job/senior_scientist*/),
 		/datum/species/unathi/yeosa  = list(HUMAN_ONLY_JOBS/*, /datum/job/adjutant, /datum/job/senior_doctor, /datum/job/senior_scientist*/),
 		/datum/species/unathi/erosan = list(HUMAN_ONLY_JOBS/*, /datum/job/adjutant, /datum/job/senior_doctor, /datum/job/senior_scientist*/),
 		/datum/species/skrell  		 = list(/datum/job/captain, /datum/job/hos, /datum/job/hop, /*/datum/job/chief_engineer, /datum/job/rd, *//datum/job/cmo, /datum/job/iaa, /datum/job/psychiatrist),
 		/datum/species/tajaran 		 = list(HUMAN_ONLY_JOBS/*, /datum/job/senior_doctor*/),
-		/datum/species/machine 		 = list(/datum/job/captain, /datum/job/hos, /datum/job/security_assistant, /datum/job/psychiatrist),
+		/datum/species/machine 		 = list(/datum/job/captain, /datum/job/hos, /datum/job/psychiatrist),
 		/datum/species/resomi  		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/exploration_leader,\
-									/datum/job/warden, /datum/job/security_assistant),
+									/datum/job/warden),
 		/datum/species/diona   		 = list(HUMAN_ONLY_JOBS, /datum/job/exploration_leader, /datum/job/explorer_pilot,\
 									/datum/job/officer, /datum/job/warden, /datum/job/detective,\
 									/datum/job/qm,\
 									/datum/job/senior_engineer, /datum/job/senior_doctor,\
-									/*/datum/job/stowaway,*/ /datum/job/senior_scientist, /datum/job/security_assistant),
+									/*/datum/job/stowaway,*/ /datum/job/senior_scientist),
 		/* /datum/species/human/booster= list(HUMAN_ONLY_JOBS,\
 									/datum/job/adjutant, /datum/job/exploration_leader, /datum/job/senior_engineer,\
 									/datum/job/warden, /datum/job/detective, /datum/job/officer,
@@ -37,7 +37,7 @@
 						/datum/job/iaa, /datum/job/adjutant,
 						/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, /datum/job/explorer_medic, /datum/job/explorer_engineer,
 						/datum/job/senior_engineer, /datum/job/engineer, /datum/job/infsys, /datum/job/engineer_trainee,
-						/datum/job/warden, /datum/job/detective, /datum/job/officer, /datum/job/security_assistant,
+						/datum/job/warden, /datum/job/detective, /datum/job/officer,
 						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/chemist, /datum/job/psychiatrist,
 						/datum/job/qm, /datum/job/cargo_tech,  /datum/job/cargo_assistant, /datum/job/mining,
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender, /datum/job/chaplain, /datum/job/actor,
