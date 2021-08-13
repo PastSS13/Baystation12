@@ -122,12 +122,6 @@
 	name = "Second Deck - Command - CE's Office"
 	req_access = list(access_ce)
 
-/area/bridge
-	name = "Second Deck - Bridge"
-	icon_state = "bridge"
-	req_access = list(access_bridge)
-	ambience = list('infinity/sound/SS2/ambience/ambbridge.wav')
-
 /area/bridge/nano
 	icon = 'infinity/icons/turf/areas.dmi'
 	icon_state = "bridge_room"
@@ -279,11 +273,6 @@
 	name = "Second Deck - Living - Cafe"
 	icon_state = "cafeteria"
 
-/area/crew_quarters/sauna
-	name = "Second Deck - Living - Sauna"
-	icon_state = "sauna"
-	sound_env = SMALL_ENCLOSED
-
 /area/grove/theta // /area/ai_abadoned
 	name = "Second Deck - Grove - Theta"
 	icon_state = "garden"
@@ -341,15 +330,6 @@
 /area/crew_quarters/sleep/bunk_big/room_two
 	name = "Second Deck - Living - Dormitory - Big Two"
 	icon_state = "Sleep"
-
-/area/crew_quarters/sleep/cryo
-	name = "Second Deck - Living - Cryogenic Storage"
-	icon = 'infinity/icons/turf/areas.dmi'
-	icon_state = "cryo"
-
-/area/crew_quarters/sleep/cryo/south
-	name = "Second Deck - Living - Cryogenic Storage - South"
-	icon_state = "cryo_south"
 
 /area/crew_quarters/adherent
 	name = "Second Deck - Living - Adherent Maintenence"
