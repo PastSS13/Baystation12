@@ -24,7 +24,7 @@
 	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
 	                    SKILL_WEAPONS     = SKILL_MAX,
 	                    SKILL_FORENSICS   = SKILL_MAX)
-	skill_points = 30
+	skill_points = 25
 
 	access = list(access_seceva, access_guard, access_security, access_brig, access_armory, access_forensics_lockers,
 			            access_maint_tunnels, access_external_airlocks, access_emergency_storage,
@@ -97,9 +97,9 @@
 	economic_power = 6
 	minimal_player_age = 10
 	ideal_character_age = 25
-	alt_titles = list("Junior judge")
+	alt_titles = list("policeman")
 
-	skill_points = 30
+	skill_points = 20
 
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/security/officer
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor)
