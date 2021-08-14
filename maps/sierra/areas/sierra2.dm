@@ -6,6 +6,10 @@
 	name = "Second Deck - Hallway - Central"
 	icon_state = "hallC3"
 
+/area/hallway/primary/seconddeck/atrium_rest
+	name = "Second Deck - Hallway - atrium_rest"
+	icon_state = "hallC3"
+
 /area/hallway/primary/seconddeck/aft
 	name = "Second Deck - Hallway - Aft"
 	icon_state = "hallA"
@@ -42,8 +46,12 @@
 	name = "Second Deck - Maintenance - Port"
 	icon_state = "pmaint"
 
+/area/maintenance/seconddeck/restaft
+	name = "Second Deck - Maintenance - restaft"
+	icon_state = "pmaint"
+
 /area/maintenance/seconddeck/aftstarboard
-	name = "Second Deck - Maintenance - Aft-Starboard "
+	name = "Second Deck - Maintenance - Aft-Starboard"
 	icon_state = "asmaint"
 
 /area/maintenance/seconddeck/aftport
@@ -258,6 +266,10 @@
 	icon_state = "bar"
 	sound_env = SMALL_ENCLOSED
 	req_access = list(list(access_bar, access_kitchen))
+
+/area/crew_quarters/rest_aft_rooms
+	name = "Second Deck - Living - rest aft rooms"
+	icon_state = "garden"
 
 /area/crew_quarters/galley
 	name = "Second Deck - Service - Galley"
