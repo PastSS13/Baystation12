@@ -1,23 +1,29 @@
 /area/forest
 	name = "\improper Snow Forest"
 	icon_state = "ai"
+	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
 	base_turf = /turf/simulated/floor/asteroid/aired
+
 
 /area/forest/survivors_cave
 	name = "\improper Survivors Cave"
 	icon_state = "bridge"
+	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
 
 /area/forest/pod
 	name = "\improper Crashed Pod"
 	icon_state = "bridge"
+	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
 
 /area/forest/landing
 	name = "\improper Landing Zone"
 	icon_state = "bridge"
+	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
 
 /area/forest/hunter_cabin
 	name = "\improper Hunter Cabin"
 	icon_state = "hallP"
+	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
 
 /area/forest/complex
 	name = "\improper Abandoned Complex"
@@ -26,14 +32,20 @@
 /area/forest/charon
 	name = "\improper Crashed Charon"
 	icon_state = "green"
+	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
+
 
 /area/forest/site
 	name = "\improper Forgotten Site"
 	icon_state = "medbay"
+	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
+
 
 /area/forest/camp
 	name = "\improper Native Camp"
 	icon_state = "engine"
+	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
+
 
 /area/forest/old_houses_1
 	name = "Old Houses North"
@@ -74,6 +86,9 @@
 /area/forest/lake
 	name = "\improper Frozen Lake"
 	icon_state = "hallP"
+	base_turf = /turf/simulated/floor/exoplanet/water/shallow
+	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
+
 
 /area/forest/coms
 	name = "\improper connect"
@@ -96,6 +111,8 @@
 /area/forest/Nexus
 	name = "\improper dead Nexus"
 	icon_state = "medbay"
+	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
+
 
 
 
