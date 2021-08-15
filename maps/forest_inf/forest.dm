@@ -7,7 +7,6 @@
 	#include "forest_jobs_override.dm"
 	#include "forest_setup.dm"
     #include "forest_lobby.dm"
-    #include "forest_antagonis.dm"
 
 	#include "forest_areas.dm"
 	#include "forest_misc.dm"
