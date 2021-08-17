@@ -35,7 +35,7 @@
 
 	welcome_sound = 'infinity/sound/ambience/horror_1.ogg'
 
-	use_overmap = 1
+	use_overmap = 0
 	num_exoplanets = 0
 
 //	minimum_players = 0 its already 0

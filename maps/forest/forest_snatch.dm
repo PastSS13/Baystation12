@@ -71,20 +71,6 @@
 	#include "../sierra/structures/closets/services.dm"
 	#include "../sierra/structures/closets/supply.dm"
 
-//	#include "../sierra/loadout/_defines.dm"
-//	#include "../sierra/loadout/loadout.dm"
-//	#include "../sierra/loadout/loadout_accessories.dm"
-//	#include "../sierra/loadout/loadout_ec_skillbages.dm"
-//	#include "../sierra/loadout/loadout_gloves.dm"
-//	#include "../sierra/loadout/loadout_head.dm"
-//	#include "../sierra/loadout/loadout_pda.dm"
-//	#include "../sierra/loadout/loadout_shoes.dm"
-//	#include "../sierra/loadout/loadout_suit.dm"
-//	#include "../sierra/loadout/loadout_tactical.dm"
-//	#include "../sierra/loadout/loadout_uniform.dm"
-//	#include "../sierra/loadout/loadout_xeno.dm"
-//	#include "../sierra/loadout/~defines.dm"
-
 //AWAY MEATSTATION
 
 	#include "../away/meatstation/meatstation.dm"
