@@ -21,7 +21,7 @@
 		/datum/species/machine 		 = list(/datum/job/captain, /datum/job/hos, /datum/job/psychiatrist),
 		/datum/species/resomi  		 = list(HUMAN_ONLY_JOBS, /datum/job/officer, /datum/job/exploration_leader,\
 									/datum/job/warden),
-		/datum/species/diona   		 = list(HUMAN_ONLY_JOBS, /datum/job/exploration_leader, /datum/job/explorer_pilot,\
+		/datum/species/diona   		 = list(HUMAN_ONLY_JOBS, /datum/job/exploration_leader,\
 									/datum/job/officer, /datum/job/warden, /datum/job/detective,\
 									/datum/job/qm,\
 									/datum/job/senior_engineer, /datum/job/senior_doctor,\
@@ -35,7 +35,7 @@
 
 	allowed_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
 						/datum/job/iaa, /datum/job/adjutant,
-						/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, /datum/job/explorer_medic, /datum/job/explorer_engineer,
+						/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_medic, /datum/job/explorer_engineer,
 						/datum/job/senior_engineer, /datum/job/engineer, /datum/job/infsys, /datum/job/engineer_trainee,
 						/datum/job/warden, /datum/job/detective, /datum/job/officer,
 						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/chemist, /datum/job/psychiatrist,
@@ -43,7 +43,7 @@
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender, /datum/job/chaplain, /datum/job/actor,
 						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
-						/datum/job/assistant,
+						/datum/job/assistant, /datum/job/anclave
 						/*/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/stowaway*/
 						)
 

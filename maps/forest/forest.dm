@@ -50,6 +50,7 @@
 	#include "job/jobs_research.dm"
 	#include "job/jobs_security.dm"
 	#include "job/jobs_service.dm"
+	#include "job/jobs_anclave.dm"
 
 	#include "items/clothing/clothing.dm"
 	#include "items/clothing/exploration.dm"
@@ -65,6 +66,7 @@
 
 	#include "forest-1.dmm"
 	#include "forest-2.dmm"
+	#include "forest-4.dmm"
 
 #elif !defined(MAP_OVERRIDE)
 

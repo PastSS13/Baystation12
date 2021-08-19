@@ -5,16 +5,17 @@
 	)
 
 	allowed_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/rd, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/hos,
-						/datum/job/iaa, /datum/job/adjutant,
-						/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, /datum/job/explorer_medic, /datum/job/explorer_engineer,
-						/datum/job/senior_engineer, /datum/job/engineer, /datum/job/infsys, /datum/job/engineer_trainee,
+//						/datum/job/iaa, /datum/job/adjutant,
+						/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_medic, /datum/job/explorer_engineer,
+						/datum/job/senior_engineer, /datum/job/engineer, /*/datum/job/infsys,*/ /datum/job/engineer_trainee,
 						/datum/job/warden, /datum/job/detective, /datum/job/officer,
 						/datum/job/senior_doctor, /datum/job/doctor, /datum/job/doctor_trainee, /datum/job/chemist, /datum/job/psychiatrist,
 						/datum/job/qm, /datum/job/cargo_tech,  /datum/job/cargo_assistant, /datum/job/mining,
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender, /datum/job/chaplain, /datum/job/actor,
 						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant,
 //						/datum/job/ai, /datum/job/cyborg,		//No borgs or AIs in forest
-						/datum/job/assistant,
+						/datum/job/assistant, /datum/job/anclave
+
 						)
 
 	access_modify_region = list(

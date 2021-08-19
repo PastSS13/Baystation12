@@ -7,7 +7,7 @@
 
 //For all exploration crew
 #define EXPLORATION_ROLES list(\
-	/datum/job/exploration_leader, /datum/job/explorer, /datum/job/explorer_pilot, \
+	/datum/job/exploration_leader, /datum/job/explorer,\
 	/datum/job/explorer_medic, /datum/job/explorer_engineer)
 
 //For jobs that allow for decorative or ceremonial clothing

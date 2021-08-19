@@ -114,7 +114,15 @@
 	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
 
 
+/area/forest/war
+	name = "\improper war"
+	icon_state = "security"
+	base_turf = /turf/simulated/floor/asteroid/aired
 
+/area/forest/war_lake
+	name = "\improper war lake"
+	icon_state = "medbay"
+	base_turf = /turf/simulated/floor/exoplanet/water/shallow
 
 
 

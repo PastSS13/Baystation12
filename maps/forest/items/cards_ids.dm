@@ -141,10 +141,6 @@
 	job_access_type = /datum/job/explorer
 	detail_color = COLOR_PURPLE
 
-/obj/item/card/id/sierra/crew/pilot
-	job_access_type = /datum/job/explorer_pilot
-	detail_color = COLOR_PURPLE
-
 /obj/item/card/id/sierra/crew/field_medic
 	job_access_type = /datum/job/explorer_medic
 	detail_color = COLOR_PURPLE

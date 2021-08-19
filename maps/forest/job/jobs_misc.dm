@@ -71,3 +71,40 @@
 	access = list(access_maint_tunnels, access_emergency_storage)
 	minimal_access = list()
 */
+
+/datum/job/anclave
+	title = "Occupant"
+	department = "Гражданский"
+	department_flag = CIV
+	total_positions = 4
+	spawn_positions = 4
+	supervisors = "Вождю"
+	economic_power = 8
+	minimal_player_age = 6
+	ideal_character_age = 35
+	alt_titles = list(
+		"Bandit",
+		)
+	outfit_type = /obj/item/clothing/suit/greatcoat/warm
+
+	allowed_branches = list(/datum/mil_branch/civilian)
+
+	allowed_ranks = list(/datum/mil_rank/civ/nt)
+
+	latejoin_at_spawnpoints = 1
+	announced = FALSE
+
+	min_skill = list(
+
+	                    SKILL_HAULING	  = SKILL_BASIC,
+	                    SKILL_COMBAT      = SKILL_BASIC,
+	                    SKILL_WEAPONS     = SKILL_BASIC,
+	                    )
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_MAX,
+	                    SKILL_WEAPONS     = SKILL_MAX,
+	                    SKILL_FORENSICS   = SKILL_MAX)
+	skill_points = 20
+
+/datum/job/anclave/get_description_blurb()
+	return "Вы житель этой планеты. Бандитство или честный образ жизни - решать Вам."
