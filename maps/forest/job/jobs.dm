@@ -43,8 +43,8 @@
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender, /datum/job/chaplain, /datum/job/actor,
 						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant,
 						/datum/job/ai, /datum/job/cyborg,
-						/datum/job/assistant, /datum/job/anclave
-						/*/datum/job/submap/merchant, /datum/job/submap/merchant_trainee, /datum/job/stowaway*/
+						/datum/job/assistant,
+						/*/datum/job/submap/merchant, /datum/job/submap/merchant_trainee,*/ /datum/job/stowaway
 						)
 
 	access_modify_region = list(

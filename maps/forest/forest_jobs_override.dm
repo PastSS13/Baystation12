@@ -14,7 +14,7 @@
 						/datum/job/janitor, /datum/job/chef, /datum/job/bartender, /datum/job/chaplain, /datum/job/actor,
 						/datum/job/senior_scientist, /datum/job/scientist, /datum/job/roboticist, /datum/job/scientist_assistant,
 //						/datum/job/ai, /datum/job/cyborg,		//No borgs or AIs in forest
-						/datum/job/assistant, /datum/job/anclave
+						/datum/job/assistant, /datum/job/stowaway
 
 						)
 
