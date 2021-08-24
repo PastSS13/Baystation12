@@ -161,7 +161,6 @@ var/global/list/AsphaltEdgeCache
 		for(var/i = 0, i <= 3, i++)
 			if(!get_step(src, 2**i))
 				continue
-			if(overlay_priority > get_step(src, 2**i).overlay_priority)
 				T = get_step(src, 2**i)
 				if(T)
 					T.overlays += AsphaltEdgeCache[2**i]
@@ -190,7 +189,6 @@ var/global/list/TropaEdgeCache
 		for(var/i = 0, i <= 3, i++)
 			if(!get_step(src, 2**i))
 				continue
-			if(overlay_priority > get_step(src, 2**i).overlay_priority)
 				T = get_step(src, 2**i)
 				if(T)
 					T.overlays += TropaEdgeCache[2**i]
@@ -218,10 +216,7 @@ var/global/list/WhiteRoadCache
 		if(96 to 100)
 			icon_state = "road5"
 	spawn(1)
-		for(var/i = 0, i <= 3, i++)
-			if(!get_step(src, 2**i) || (!istype(get_step(src, 2**i), src.type) && !get_step(src, 2**i).overlay_priority))
-				src.overlays += WhiteRoadCache[2**i]
-
+	for(var/i = 0, i <= 3, i++)
 	return
 
 /turf/simulated/floor/stalker/floor/gryaz
@@ -248,7 +243,6 @@ var/global/list/GryazEdgeCache
 		for(var/i = 0, i <= 3, i++)
 			if(!get_step(src, 2**i))
 				continue
-			if(overlay_priority > get_step(src, 2**i).overlay_priority)
 				T = get_step(src, 2**i)
 				if(T)
 					T.overlays += GryazEdgeCache[2**i]
@@ -393,7 +387,6 @@ var/global/list/WaterEdgeCache
 		for(var/i = 0, i <= 3, i++)
 			if(!get_step(src, 2**i))
 				continue
-			if(overlay_priority > get_step(src, 2**i).overlay_priority)
 				T = get_step(src, 2**i)
 				if(T)
 					T.overlays += WaterEdgeCache[2**i]
