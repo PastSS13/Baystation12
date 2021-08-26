@@ -15,6 +15,7 @@
 	var/campfire_max_bright = 0.9
 	var/campfire_inner_range = 0.5
 	var/campfire_outer_range = 4
+	var/set_temperature = 290
 
 obj/machinery/campfire/barrel
 	name = "barrel"
@@ -33,31 +34,13 @@ obj/machinery/campfire/barrel
 		do_after_check = 0
 		return
 
-	do_after_check = 0
+	do_after_check = 1
 
 	user.visible_message("<span class='green'>[user] extinguished a fire.</span>", "<span class='green'>You extinguished a fire.</span>")
 	desc = initial(desc)
 	on = !on
-	update_icon("barrel0")
+	icon_state = ("barrel0")
 	set_light(0)
-
-/obj/machinery/campfire/update_icon()
-	icon_state = "campfire[on]"
-	update_state()
-	return
-
-/obj/machinery/campfire/barrel/update_icon()
-	icon_state = "barrel[on]"
-	update_state()
-	return
-
-/obj/machinery/campfire/proc/update_state()
-	if(on)
-		if(!sound_playing)
-			sound_playing = 1
-
-	else if(!on)
-		sound_playing = 0
 
 /obj/machinery/campfire/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/flame/lighter))
@@ -65,6 +48,7 @@ obj/machinery/campfire/barrel
 		usr.visible_message("[usr] lit a fire.", "<span class='notice'>You lit a fire.</span>")
 		icon_state = ("barrel1")
 		desc = "ќт костра исходит тЄпло и м€гкий свет."
+		set_temperature = 290
 		set_light(campfire_max_bright, campfire_inner_range, campfire_outer_range,\
 																								l_color = LIGHT_COLOR_FIRE)
 		return
