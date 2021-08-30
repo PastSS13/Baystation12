@@ -1,12 +1,12 @@
 /obj/machinery/campfire
 	name = "Campfire"
-	desc = "Бочка с парой сухих дровишек внутри. Можно зажечь спичками или зажигалкой."
+	desc = "Р‘РѕС‡РєР° СЃ РїР°СЂРѕР№ СЃСѓС…РёС… РґСЂРѕРІРёС€РµРє РІРЅСѓС‚СЂРё. РњРѕР¶РЅРѕ Р·Р°Р¶РµС‡СЊ СЃРїРёС‡РєР°РјРё РёР»Рё Р·Р°Р¶РёРіР°Р»РєРѕР№."
 	icon = 'icons/stalker/stalker.dmi'
 	icon_state = "campfire0"
 	anchored = 1
 	var/firecolor = "#FFAA33"
 	var/sound_playing = 0
-	var/cooldown = 5 					//Кулдаун в секундах
+	var/cooldown = 5 					//РљСѓР»РґР°СѓРЅ РІ СЃРµРєСѓРЅРґР°С…
 	var/incooldown = 0
 	var/on = 0
 	var/list/mob/living/carbon/campers = list()
@@ -43,11 +43,11 @@ obj/machinery/campfire/barrel
 	set_light(0)
 
 /obj/machinery/campfire/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/flame/lighter))
+	if(istype(I, /obj/item/flame))
 
 		usr.visible_message("[usr] lit a fire.", "<span class='notice'>You lit a fire.</span>")
 		icon_state = ("barrel1")
-		desc = "От костра исходит тёпло и мягкий свет."
+		desc = "РћС‚ РєРѕСЃС‚СЂР° РёСЃС…РѕРґРёС‚ С‚С‘РїР»Рѕ Рё РјСЏРіРєРёР№ СЃРІРµС‚."
 		set_temperature = 290
 		set_light(campfire_max_bright, campfire_inner_range, campfire_outer_range,\
 																								l_color = LIGHT_COLOR_FIRE)
