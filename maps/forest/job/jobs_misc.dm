@@ -73,7 +73,7 @@
 */
 
 /datum/job/stowaway
-	title = "житель"
+	title = "Mestni"
 	department = "Civilian"
 	department_flag = CIV
 	supervisors = "Вождю"
@@ -90,8 +90,7 @@
         "Bandit",
         )
 	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(/datum/mil_rank/civ)
-	latejoin_at_spawnpoints = 1
+	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	announced = FALSE
 
 	access = list(access_maint_tunnels, access_emergency_storage)

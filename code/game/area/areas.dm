@@ -8,8 +8,8 @@
 	var/uid
 	var/blowout = 0
 	var/area_flags
-	var/ambient_music_cooldown				= 600
-	var/ambient_environment_cooldown		= 660
+	var/ambient_music_cooldown				= 3000
+	var/ambient_environment_cooldown		= 3000
 	var/list/ambient_background_cooldown = null
 	var/list/ambient_music = list(	'sound/stalker/ambience/amb01.ogg','sound/stalker/ambience/amb02.ogg',
 									'sound/stalker/ambience/amb03.ogg','sound/stalker/ambience/amb04.ogg',

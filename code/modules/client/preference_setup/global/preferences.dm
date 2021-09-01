@@ -305,7 +305,7 @@ var/list/_client_preferences_by_type
 			C.chatOutput.loaded = FALSE
 			C.chatOutput.start()
 		else
-			C.force_white_theme()
+			C.force_dark_theme()
 			winset(C, "output", "is-visible=true;is-disabled=false")
 			winset(C, "browseroutput", "is-visible=false")
 

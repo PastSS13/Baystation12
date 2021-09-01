@@ -104,6 +104,15 @@
 	var/has_safety = TRUE
 	var/safety_icon 	   //overlay to apply to gun based on safety state, if any
 
+	var/autofire_enabled = FALSE
+	var/atom/autofiring_at
+	var/mob/autofiring_by
+	var/autofiring_timer
+
+	// Spam prevention
+	var/last_fire_message_type
+	var/last_fire_message_time
+
 //[INF]
 	var/is_serial = 0 //the entrie variable that defines should the gun have serial
 	var/serial // < most important thing, this is the SERIAL itself
@@ -117,12 +126,16 @@ var/global/serials = list()
 	. = ..()
 	for(var/i in 1 to firemodes.len)
 		firemodes[i] = new /datum/firemode(src, firemodes[i])
-
 	if(isnull(scoped_accuracy))
 		scoped_accuracy = accuracy
-
 	if(scope_zoom)
 		verbs += /obj/item/gun/proc/scope
+
+/obj/item/gun/Destroy()
+	// autofire timer is automatically cleaned up
+	autofiring_at = null
+	autofiring_by = null
+	. = ..()
 //[INF]
 	if(is_serial) //serial
 		var/snum = rand(1,10000)
@@ -130,7 +143,47 @@ var/global/serials = list()
 			snum = rand(1,10000)
 		serial = "[s_type]-[s_gun]-[snum]" //e.g K-P20-9999
 		serials += serial //list of serials
-//[/INF]
+//[ND]
+
+/obj/item/gun/proc/set_autofire(var/atom/fire_at, var/mob/fire_by)
+	. = TRUE
+	if(!istype(fire_at) || !istype(fire_by))
+		. = FALSE
+	else if(QDELETED(fire_at) || QDELETED(fire_by) || QDELETED(src))
+		. = FALSE
+	else if(!autofire_enabled)
+		. = FALSE
+	if(.)
+		autofiring_at = fire_at
+		autofiring_by = fire_by
+		if(!autofiring_timer)
+			autofiring_timer = addtimer(CALLBACK(src, .proc/handle_autofire), burst_delay, (TIMER_STOPPABLE | TIMER_LOOP | TIMER_UNIQUE | TIMER_OVERRIDE))
+	else
+		clear_autofire()
+
+/obj/item/gun/proc/clear_autofire()
+	autofiring_at = null
+	autofiring_by = null
+	if(autofiring_timer)
+		deltimer(autofiring_timer)
+		autofiring_timer = null
+
+/obj/item/gun/proc/handle_autofire()
+	set waitfor = FALSE
+	. = TRUE
+	if(QDELETED(autofiring_at) || QDELETED(autofiring_by))
+		. = FALSE
+	else if(autofiring_by.get_active_hand() != src || autofiring_by.incapacitated())
+		. = FALSE
+	else if(!autofiring_by.client || !(autofiring_by in view(autofiring_by.client.view, autofiring_by)))
+		. = FALSE
+	if(!.)
+		clear_autofire()
+	else if(can_autofire())
+		autofiring_by.set_dir(get_dir(src, autofiring_at))
+		Fire(autofiring_at, autofiring_by, null, (get_dist(autofiring_at, autofiring_by) <= 1), FALSE, FALSE)
+
+//ND SUKA
 
 /obj/item/gun/update_twohanding()
 	if(one_hand_penalty)
@@ -233,9 +286,11 @@ var/global/serials = list()
 	update_icon()
 	return ..()
 
-/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, var/list/params = list())
-	if(!user || !target) return
-	if(target.z != user.z) return
+/obj/item/gun/proc/Fire(atom/target, mob/living/user, clickparams, pointblank=0, reflex=0, set_click_cooldown=TRUE)
+	if(!user || !target)
+		return
+	if(target.z != user.z)
+		return
 
 //[INF]
 	if(istype(target, /obj/structure/catwalk))
@@ -260,10 +315,10 @@ var/global/serials = list()
 		return
 
 	last_safety_check = world.time
-	var/shoot_time = (burst - 1)* burst_delay
-	user.setClickCooldown(shoot_time) //no clicking on things while shooting
-	user.SetMoveCooldown(shoot_time) //no moving while shooting either
-	next_fire_time = world.time + shoot_time
+	if(set_click_cooldown)
+		var/shoot_time = (burst - 1) * burst_delay
+		user.setClickCooldown(shoot_time) //no clicking on things while shooting
+		next_fire_time = world.time + shoot_time
 
 	var/held_twohanded = (user.can_wield_item(src) && src.is_held_twohanded(user))
 
@@ -271,9 +326,6 @@ var/global/serials = list()
 	var/turf/targloc = get_turf(target) //cache this in case target gets deleted during shooting, e.g. if it was a securitron that got destroyed.
 	for(var/i in 1 to burst)
 		var/obj/projectile = consume_next_projectile(user)
-
-		projectile = modify_projectile(projectile, params)
-
 		if(!projectile)
 			handle_click_empty(user)
 			break
@@ -295,9 +347,9 @@ var/global/serials = list()
 			pointblank = 0
 
 	//update timing
-	var/delay = max(burst_delay+1, fire_delay)
-	user.setClickCooldown(min(delay, DEFAULT_QUICK_COOLDOWN))
-	user.SetMoveCooldown(move_delay)
+	var/delay = min(max(burst_delay+1, fire_delay), DEFAULT_QUICK_COOLDOWN)
+	if(delay)
+		user.setClickCooldown(delay)
 	next_fire_time = world.time + delay
 
 //obtains the next projectile to fire
@@ -339,7 +391,7 @@ var/global/serials = list()
 				SPAN_DANGER("You hear a [fire_sound_text]!")
 			)
 
-		if (pointblank)
+		if (pointblank && ismob(target))
 			admin_attack_log(user, target,
 				"shot point blank with \a [type]",
 				"shot point blank with \a [type]",
@@ -728,8 +780,12 @@ var/global/serials = list()
 		afterattack(shoot_to,target)
 		return 1
 
+/obj/item/gun/dropped(mob/living/user)
+	. = ..()
+	clear_autofire()
+
 /obj/item/gun/proc/can_autofire()
-	return (can_autofire && world.time >= next_fire_time)
+	return (autofire_enabled && world.time >= next_fire_time)
 
 /obj/item/gun/proc/check_accidents(mob/living/user, message = "[user] fumbles with the [src] and it goes off!",skill_path = SKILL_WEAPONS, fail_chance = 20, no_more_fail = SKILL_ADEPT, factor = 2) //INF: was no_more_fail = SKILL_EXPERT
 	if(istype(user))
@@ -740,3 +796,5 @@ var/global/serials = list()
 			var/picked = pick(targets)
 			afterattack(picked, user)
 			return 1
+
+
