@@ -198,7 +198,7 @@ var/global/list/TropaEdgeCache
 	name = "road"
 	icon = 'icons/stalker/building_road.dmi'
 	icon_state = "road2"
-	layer = 2
+	layer = 1
 
 
 var/global/list/WhiteRoadCache
@@ -223,7 +223,7 @@ var/global/list/WhiteRoadCache
 	name = "dirt"
 	icon = 'icons/stalker/zemlya.dmi'
 	icon_state = "gryaz1"
-	layer = 2.01
+	layer = 1
 
 
 var/global/list/GryazEdgeCache
@@ -258,7 +258,7 @@ var/global/list/GryazEdgeCache
 	name = "rails"
 	icon = 'icons/stalker/rails.dmi'
 	icon_state = "sp"
-	layer = 2.01
+	layer = 1
 	anchored = 1
 	density = 0
 	opacity = 0

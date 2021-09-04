@@ -54,6 +54,7 @@
 	///goonchat chatoutput of the client
 	var/datum/chatOutput/chatOutput
 
-	var/fullscreen = FALSE
+	var/fullscreen = TRUE
+	var/list/selected_target[2]
 
 	mouse_pointer_icon = 'icons/stalker/cursors.dmi'
