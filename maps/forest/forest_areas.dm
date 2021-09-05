@@ -7,6 +7,7 @@
 /area/forest/survivors_cave
 	name = "\improper Survivors Cave"
 	icon_state = "bridge"
+	area_flags = AREA_FLAG_RAD_SHIELDED
 
 
 /area/forest/pod
