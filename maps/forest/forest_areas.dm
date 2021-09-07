@@ -9,6 +9,16 @@
 	icon_state = "bridge"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
+/area/forest/survivors_cave_med
+	name = "\improper Survivors Cave Medical"
+	icon_state = "bridge"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/forest/survivors_cave_cargo
+	name = "\improper Survivors Cave Cargo"
+	icon_state = "bridge"
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
 
 /area/forest/pod
 	name = "\improper Crashed Pod"
