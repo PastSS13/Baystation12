@@ -1,6 +1,7 @@
 /obj/item/projectile/bullet
 	name = "bullet"
 	icon_state = "bullet"
+	impact_effect_turf = /obj/effect/temp_visual/bullet
 	fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
 	damage = 50
 	damage_type = BRUTE

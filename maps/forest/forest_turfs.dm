@@ -1,6 +1,9 @@
 /turf/simulated/floor/exoplanet/snow
 	temperature = 240
 	initial_gas = list(oxygen = MOLES_O2STANDARD * 1.4, nitrogen = MOLES_N2STANDARD * 1.4)
+	var/has_footprints = TRUE
+	var/footprint_color = "#FFFFFF"
+	var/print_alpha = 255
 
 /turf/simulated/floor/exoplanet/ice
 	temperature = 240

@@ -7,11 +7,11 @@
 
 /obj/structure/flora/tree/dead/firewood
 
-/obj/structure/flora/tree/dead/firewood/attackby(obj/item/O, mob/user)
-	. = ..()
-	if(istype(O,/obj/item/material/twohanded/fireaxe) || /obj/item/material/hatchet)
+/obj/structure/flora/tree/dead/firewood/attackby(obj/item/I, mob/user, params)
+	..()
+	if (istype(I, /obj/item/material/hatchet||/obj/item/material/twohanded/fireaxe))
 		usr.visible_message("<span class='notice'>\The [usr] starts chopping \the [src]</span>", "<span class='notice'>You start chopping \the [src]</span>", "You hear the sound of a hatchet hitting the wood.")
-		if(do_after(user,50))
+		if(do_after(user,150))
 			to_chat(usr, "<span class='notice'>You chopped down the [src]</span>")
 			var/obj/item/stack/material/wood/W = new(src.loc)
 			W.amount = 5

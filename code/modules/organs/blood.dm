@@ -42,7 +42,7 @@
 		return amt
 	return 0
 
-#define BLOOD_SPRAY_DISTANCE 2
+#define BLOOD_SPRAY_DISTANCE 1
 /mob/living/carbon/human/proc/blood_squirt(var/amt, var/turf/sprayloc)
 	if(amt <= 0 || !istype(sprayloc))
 		return

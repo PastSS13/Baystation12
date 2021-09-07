@@ -40,3 +40,20 @@
 	if(set_dir & WEST)
 		target_pixel_x = -16
 	animate(src, pixel_x = target_pixel_x, pixel_y = target_pixel_y, alpha = 0, time = duration)
+
+obj/effect/temp_visual/bullet
+	name = "bullet impact"
+	icon = 'icons/effects/bullet_impact.dmi'
+	icon_state = "bullet"
+	duration = 30
+	layer = PROJECTILE_LAYER
+
+obj/effect/temp_visual/bullet/New(var/desired_location,var/desired_time,var/desired_pixel_x,var/desired_pixel_y,var/desired_color)
+	. = ..()
+	color = desired_color
+	pixel_x = desired_pixel_x
+	pixel_y = desired_pixel_y
+
+
+obj/effect/temp_visual/bullet/laser
+	icon_state = "laser"
