@@ -6,11 +6,11 @@
 	path = /obj/item/clothing/accessory/ubac
 	flags = GEAR_HAS_TYPE_SELECTION
 
-/datum/gear/tactical/armor_deco
-	allowed_roles = list(/datum/job/hos, /datum/job/warden, /datum/job/detective, /datum/job/officer)
+///datum/gear/tactical/armor_deco
+//	allowed_roles = null
 
-/datum/gear/tactical/helm_covers
-	allowed_roles = ARMORED_ROLES
+///datum/gear/tactical/helm_covers
+//	allowed_roles = null
 
 /datum/gear/tactical/armor_pouches
 	allowed_roles = ARMORED_ROLES
@@ -42,9 +42,9 @@
 	allowed_roles = list("Journalist") //etc.broken
 */
 
-/datum/gear/tactical/security_uniforms
+/*/datum/gear/tactical/security_uniforms
 	display_name = "security uniform"
-	allowed_roles = SECURITY_ROLES
+	allowed_roles = null
 	path = /obj/item/clothing/under
 	slot = slot_w_uniform
 
@@ -55,7 +55,7 @@
 	uniforms +=	/obj/item/clothing/under/rank/security/navyblue
 	uniforms +=	/obj/item/clothing/under/rank/security/navyblue/alt
 	gear_tweaks += new/datum/gear_tweak/path/specified_types_list(uniforms)
-
+*/
 /datum/gear/tactical/camo_inf
 	display_name = "camo uniform - colorable"
 	path = /obj/item/clothing/under/gray_camo

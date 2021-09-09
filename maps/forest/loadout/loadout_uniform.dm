@@ -12,14 +12,6 @@
 	allowed_roles = TECHNICAL_ROLES
 
 
-/datum/gear/uniform/corpsi
-	display_name = "contractor uniform selection"
-	allowed_branches = list(/datum/mil_branch/contractor)
-
-/datum/gear/uniform/si_guard
-	display_name = "NanoTrasen guard uniform"
-	path = /obj/item/clothing/under/rank/guard/nanotrasen
-	allowed_roles = list(/datum/job/officer)
 
 /datum/gear/uniform/si_exec
 	display_name = "NanoTrasen senior researcher alt uniform"
