@@ -38,6 +38,8 @@
 	use_overmap = 0
 	num_exoplanets = 0
 
+
+
 //	minimum_players = 0 its already 0
 
 	away_site_budget = 0
