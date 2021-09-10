@@ -1,17 +1,19 @@
 /obj/item/projectile/bullet/pellet/fragment
-	damage = 7
+	damage = 30
+	armor_penetration = 10
 	range_step = 2 //controls damage falloff with distance. projectiles lose a "pellet" each time they travel this distance. Can be a non-integer.
 
 	base_spread = 0 //causes it to be treated as a shrapnel explosion instead of cone
 	spread_step = 20
 
-	silenced = TRUE
+	silenced = FALSE
 	fire_sound = null
 	no_attack_log = TRUE
 	muzzle_type = null
 
 /obj/item/projectile/bullet/pellet/fragment/strong
-	damage = 15
+	damage = 40
+	armor_penetration = 10
 
 /obj/item/grenade/frag
 	name = "fragmentation grenade"
@@ -19,8 +21,8 @@
 	icon_state = "frggrenade"
 
 	var/list/fragment_types = list(/obj/item/projectile/bullet/pellet/fragment = 1)
-	var/num_fragments = 72  //total number of fragments produced by the grenade
-	var/explosion_size = 2   //size of the center explosion
+	var/num_fragments = 300  //total number of fragments produced by the grenade
+	var/explosion_size = 4   //size of the center explosion
 
 	//The radius of the circle used to launch projectiles. Lower values mean less projectiles are used but if set too low gaps may appear in the spread pattern
 	var/spread_range = 7 //leave as is, for some reason setting this higher makes the spread pattern have gaps close to the epicenter
@@ -75,7 +77,7 @@
 	desc = "A light fragmentation grenade, designed to be fired from a launcher. It can still be activated and thrown by hand if necessary."
 	icon_state = "fragshell"
 
-	num_fragments = 50 //less powerful than a regular frag grenade
+	num_fragments = 80 //less powerful than a regular frag grenade
 //[INF]
 /obj/item/grenade/frag/shell/attack_self(mob/user as mob)
 	return
@@ -90,8 +92,8 @@
 	throw_range = 5 //heavy, can't be thrown as far
 
 	fragment_types = list(/obj/item/projectile/bullet/pellet/fragment=1,/obj/item/projectile/bullet/pellet/fragment/strong=4)
-	num_fragments = 200  //total number of fragments produced by the grenade
-	explosion_size = 3
+	num_fragments = 400  //total number of fragments produced by the grenade
+	explosion_size = 5
 
 /obj/item/grenade/frag/high_yield/on_explosion(var/turf/O)
 	if(explosion_size)
