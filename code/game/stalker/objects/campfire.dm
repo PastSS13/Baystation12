@@ -53,5 +53,12 @@ obj/machinery/campfire/barrel
 																								l_color = LIGHT_COLOR_FIRE)
 		return
 
+/obj/machinery/campfire/barrel/on
+
+	icon_state = ("barrel1")
+	desc = "От костра исходит тёпло и мягкий свет."
+	set_temperature = 290
+	set_light(campfire_max_bright, campfire_inner_range, campfire_outer_range,\
+																								l_color = LIGHT_COLOR_FIRE)
 
 

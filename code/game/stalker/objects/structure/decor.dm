@@ -68,10 +68,19 @@
 /obj/structure/stalker/cacheable/truba/vert
 	icon_state = "truba_v"
 
+/obj/structure/stalker/rain
+	icon = 'icons/stalker/metro-2/decor.dmi'
+	icon_state = "rain"
+
+/obj/structure/stalker/rain/old
+
+	icon = 'icons/stalker/metro-2/decor.dmi'
+	icon_state = "rain_old"
+
 /obj/structure/stalker/cacheable/body
 	icon = 'icons/stalker/hstation.dmi'
 	name = "stalker's body"
-	desc = "Полусгниший труп."
+	desc = "Полусгнивший труп."
 	 //  // eng_desc = "Dead smelly stalker."
 	icon_state = "body4"
 	density = 0
@@ -79,7 +88,7 @@
 
 /obj/structure/stalker/cacheable/body/New()
 	..()
-	icon_state = "body[rand(3,7)]"
+	icon_state = "body[rand(3,20)]"
 
 /obj/structure/stalker/cacheable/bochka
 	name = "barrel"
@@ -88,6 +97,12 @@
 	icon_state = "bochka"
 	density = 1
 	 // cache_size = 2
+obj/structure/stalker/cacheable/help
+	icon = 'icons/stalker/hstation.dmi'
+	name = "надпись"
+	desc = "Чьи-то предсмертные надписи. Ужасно."
+	icon_state = "help"
+	density = 1
 
 /obj/structure/stalker/cacheable/bochka/red
 	name = "red barrel"

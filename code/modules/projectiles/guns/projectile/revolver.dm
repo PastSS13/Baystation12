@@ -13,6 +13,7 @@
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
 	mag_insert_sound = 'sound/weapons/guns/interaction/rev_magin.ogg'
 	mag_remove_sound = 'sound/weapons/guns/interaction/rev_magout.ogg'
+	jam_chance = 10
 
 	accuracy = -1 //inf, was 2
 	accuracy_power = 8

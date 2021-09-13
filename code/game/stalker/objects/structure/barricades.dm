@@ -46,10 +46,10 @@
 	lootenable = 1
 	doubleloot = 1
 	loot = list(
-					/obj/item/reagent_containers/food/snacks/stalker/konserva = 55,
-					/obj/item/reagent_containers/food/snacks/stalker/konserva/shproti = 40,
-					/obj/item/reagent_containers/food/snacks/stalker/konserva/soup = 50,
-					/obj/item/reagent_containers/food/snacks/stalker/kolbasa = 60)
+					/obj/item/reagent_containers/food/snacks/can/stalker/konserva = 55,
+					/obj/item/reagent_containers/food/snacks/canned/stalker/konserva/shproti = 40,
+					/obj/item/reagent_containers/food/snacks/canned/stalker/konserva/soup = 50,
+					/obj/item/reagent_containers/food/snacks/stalker/konserva/kolbasa = 60)
 
 /obj/structure/barricade/stalker/barbed_wire
 	name = "wire"

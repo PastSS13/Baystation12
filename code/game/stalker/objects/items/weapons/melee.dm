@@ -1,6 +1,6 @@
-/obj/item/weapon/kitchen/knife/tourist
+/obj/item/material/knife/combat/tourist
 	name = "hunting knife"
-	desc = "Дешевый нож дл&#255; разделывани&#255; добычи...И людей."
+	desc = "Дешевый нож для разделывания добычи...И людей."
 	icon = 'icons/stalker/lohweb/weapons.dmi'
 	icon_state = "hunting"
 	slot_flags = SLOT_BELT
@@ -10,7 +10,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
-/obj/item/weapon/kitchen/knife/bayonet
+/obj/item/material/knife/plasteel/bayonet
 	name = "bayonet"
 	desc = "Опасный, но плохой в разделке туш мутантов штык-нож."
 	icon = 'icons/stalker/weapons.dmi'

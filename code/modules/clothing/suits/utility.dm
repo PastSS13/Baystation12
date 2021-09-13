@@ -132,8 +132,10 @@
 		slot_r_hand_str = "rad_suit",
 	)
 	w_class = ITEM_SIZE_HUGE//bulky item
+
 	gas_transfer_coefficient = 0.90
 	permeability_coefficient = 0.50
+	min_cold_protection_temperature = T0C - 20
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|HANDS|FEET
 	allowed = list(/obj/item/device/flashlight,/obj/item/tank/emergency,/obj/item/clothing/head/radiation,/obj/item/clothing/mask/gas,/obj/item/device/geiger)
 	armor = list(

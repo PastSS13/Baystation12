@@ -1,3 +1,6 @@
+/obj/item/gun/projectile/shotgun
+	jam_chance = 40
+
 /obj/item/gun/projectile/shotgun/pump
 	name = "shotgun"
 	desc = "The mass-produced W-T Remmington 29x shotgun is a favourite of police and security forces on many worlds. Useful for sweeping alleys."
@@ -19,6 +22,7 @@
 	var/recentpump = 0 // to prevent spammage
 	wielded_item_state = "shotgun-wielded"
 	load_sound = 'sound/weapons/guns/interaction/shotgun_instert.ogg'
+
 
 	is_serial = 1
 	s_gun = "WT-29"

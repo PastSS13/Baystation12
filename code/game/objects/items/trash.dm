@@ -174,6 +174,42 @@
 	name = "oort rock bag"
 	icon_state = "oort"
 
+/obj/item/trash/shproti
+	name = "shproti"
+	icon_state = "shproti"
+
+/obj/item/trash/snikers/Choco
+	name = "Chocolate"
+	icon_state = "Choco"
+/obj/item/trash/konserva/TushenkaRed
+	name = "tuska"
+	icon_state = "TushenkaRed"
+/obj/item/trash/konserva/kasha
+	name = "kasha"
+	icon_state = "kasha"
+
+/obj/item/trash/snikers/GAL
+	name = "GAL"
+	icon_state = "GAL"
+/obj/item/trash/konserva/TushenkaGreen
+	name = "TushenkaGreen"
+	icon_state = "TushenkaGreen"
+/obj/item/trash/konserva/TushenkaBlue
+	name = "TushenkaBlue"
+	icon_state = "TushenkaBlue"
+/obj/item/trash/sirok
+	name = "sirok"
+	icon_state = "sirok"
+/obj/item/trash/sirok/snikers
+	name = "snikers"
+	icon_state = "snikers"
+/obj/item/trash/soup
+	name = "soup"
+	icon_state = "soup"
+/obj/item/trash/fish
+	name = "fish"
+	icon_state = "fish"
+
 /obj/item/trash/weebonuts
 	name = "red alert nuts bag"
 	icon_state = "weebonuts"
@@ -185,3 +221,5 @@
 
 /obj/item/trash/attack(mob/M as mob, mob/living/user as mob)
 	return
+
+

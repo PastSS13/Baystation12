@@ -6,7 +6,7 @@
 	allowed_magazines = /obj/item/ammo_magazine/pistol
 	var/empty_icon = TRUE  //If it should change icon when empty
 	var/ammo_indicator = FALSE
-
+	jam_chance = 45
 	accuracy_power = 7
 	bulk = GUN_BULK_PISTOL //inf
 
@@ -25,6 +25,7 @@
 			return
 		else
 			overlays += image(icon, "ammo_ok")
+
 
 /obj/item/gun/projectile/pistol/military
 	name = "military pistol"
