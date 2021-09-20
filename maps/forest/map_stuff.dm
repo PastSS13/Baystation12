@@ -9,7 +9,7 @@
 
 //walls
 
-/turf/simulated/wall/cataclysmdda
+/turf/unsimulated/wall/cataclysmdda
 	name = "стена"
 	desc = "Простая стена."
 	icon = 'ND/icons/cataclysmdda/wall01.dmi'
@@ -21,10 +21,10 @@
 
 
 
-/turf/simulated/wall/cataclysmdda/blue
+/turf/unsimulated/wall/cataclysmdda/blue
 	color = COLOR_SKY_BLUE
 
-/turf/simulated/wall/cataclysmdda/wooden
+/turf/unsimulated/wall/cataclysmdda/wooden
 	name = "деревянная стена"
 	icon = 'ND/icons/cataclysmdda/wall02.dmi'
 	icon_state = "walld-0"
@@ -34,7 +34,7 @@
 	//iexplosion_block = 0
 	//custom_materials = list(/datum/material/wood = 4000)
 
-/turf/simulated/wall/cataclysmdda/redbrick
+/turf/unsimulated/wall/cataclysmdda/redbrick
 	name = "кирпичная стена"
 	desc = "Типичная стена из красных кирпичей. Поразительно! Вы только посмотрите на то, как укладывали кирпичи, это явно были не простые иммигранты из Азербайджана..."
 	icon = 'ND/icons/cataclysmdda/wall03.dmi'
@@ -47,14 +47,14 @@
 
 //floors
 
-/turf/simulated/floor/wood/cataclysmdda/parquet
+/turf/simulated/floor/cataclysmdda/parquet
 	name = "паркетный пол"
 	desc = "Деревянный пол, уложенный в стиле 'ёлочки'. Подозрительно как-то напоминает о домашнем уюте."
 	icon = 'ND/icons/cataclysmdda/cata_floors.dmi'
 	icon_state = "wooden1"
 	//base_turf= /turf/simulated/indestructible/cataclysmdda/sand
 
-/turf/simulated/floor/wood/cataclysmdda
+/turf/simulated/floor/cataclysmdda
 	name = "деревянный пол"
 	desc = "Простой непримечательный деревянный пол. У вас возникает ощущение, что когда-нибудь этот пол провалится над вами."
 	icon = 'ND/icons/cataclysmdda/cata_floors.dmi'
@@ -62,35 +62,41 @@
 	//base_turf= /turf/simulated/indestructible/cataclysmdda/sand
 
 
-/turf/simulated/floor/plasteel/tile/white
+/turf/simulated/floor/plasteels/tile/white
+	icon = 'ND/icons/cataclysmdda/cata_floors.dmi'
 	icon_state = "tile2"
 	//base_icon_state = "tile2"
 
-/turf/simulated/floor/plasteel/tile/monofloor/cataclysmdda
+/turf/simulated/floor/plasteels/tile/monofloor/cataclysmdda
 	name = "пол"
+	icon = 'ND/icons/cataclysmdda/cata_floors.dmi'
 	icon_state = "block1"
 	//base_icon_state = "block1"
 
 
-/turf/simulated/floor/plasteel/tile/monofloor/cataclysmdda/alt
+/turf/simulated/floor/plasteels/tile/monofloor/cataclysmdda/alt
+	icon = 'ND/icons/cataclysmdda/cata_floors.dmi'
 	icon_state = "block2"
 	//base_icon_state = "block2"
 
-/turf/simulated/floor/plasteel/tile/monofloor/cataclysmdda/alt2
+/turf/simulated/floor/plasteels/tile/monofloor/cataclysmdda/alt2
+	icon = 'ND/icons/cataclysmdda/cata_floors.dmi'
 	name = "бетонный пол"
 	icon_state = "concrete"
 	//base_icon_state = "concrete"
 
-/turf/simulated/floor/plasteel/tile/monofloor/cataclysmdda/alt3
+/turf/simulated/floor/plasteels/tile/monofloor/cataclysmdda/alt3
+	icon = 'ND/icons/cataclysmdda/cata_floors.dmi'
 	icon_state = "block3"
 	//base_icon_state = "block3"
 
-/turf/simulated/floor/plasteel/tile/monofloor/cataclysmdda/blue
+/turf/simulated/floor/plasteels/tile/monofloor/cataclysmdda/blue
+	icon = 'ND/icons/cataclysmdda/cata_floors.dmi'
 	icon_state = "blue"
 	//base_icon_state = "blue"
 //	return FALSE
 
-/turf/simulated/floor/plating/beach/sand/cataclysmdda
+/turf/simulated/floor/platings/beach/sand/cataclysmdda
 	icon = 'ND/icons/cataclysmdda/cata_floors.dmi'
 	icon_state = "sand"
 	//base_icon_state = "sand"
@@ -105,7 +111,7 @@
 	//claw//footstep = //footstep_SAND
 	//heavy//footstep = //footstep_SAND
 
-/turf/simulated/floor/grass/cataclysmdda
+/turf/simulated/floor/grasss/cataclysmdda
 	name = "трава"
 	desc = "В ней классно валяться."
 	icon = 'ND/icons/cataclysmdda/cata_floors.dmi'
@@ -118,11 +124,11 @@
 	//claw//footstep = //footstep_GRASS
 	//heavy//footstep = //footstep_GRASS
 
-/turf/simulated/floor/grass/cataclysmdda/Initialize()
+/turf/simulated/floor/grasss/cataclysmdda/Initialize()
 	. = ..()
 	icon_state = "grass[rand(0, 6)]"
 
-/turf/simulated/floor/grass/cataclysmdda/dirt
+/turf/simulated/floor/grasss/cataclysmdda/dirt
 	name = "грязь"
 	desc = null
 	icon = 'ND/icons/cataclysmdda/cata_floors.dmi'
@@ -135,10 +141,10 @@
 	//slowdown = 0.5
 	//base_turf= /turf/simulated/indestructible/cataclysmdda/sand
 
-/turf/simulated/floor/grass/cataclysmdda/dirt/proc/changeicon()
+/turf/simulated/floor/grasss/cataclysmdda/dirt/proc/changeicon()
 	icon_state = "dirt[rand(1,4)]"
 
-/turf/simulated/floor/grass/cataclysmdda/dirt/alt
+/turf/simulated/floor/grasss/cataclysmdda/dirt/alt
 	icon_state = "dirtalt"
 	//base_icon_state = "dirt1"
 
@@ -567,7 +573,7 @@
 	//flags_1 = CONDUCT_1
 	layer = CLOSED_DOOR_LAYER
 
-/*
+
 /obj/structure/cataclysmdda/bookcase
 	name = "книжная полка"
 	icon = 'ND/icons/cataclysmdda/cata_objects.dmi'
@@ -576,7 +582,7 @@
 	//obj_integrity = 80
 	//sheetType = /obj/item/stack/sheet/mineral/wood
 	//sheetAmount = 3
-*/
+
 /obj/structure/cataclysmdda/veshalka
 	name = "вешалка"
 	desc = null
@@ -584,7 +590,7 @@
 	//max_integrity = 25
 	//obj_integrity = 25
 
-/obj/structure/door/wood/cataclysmdda
+/obj/machinery/door/unpowered/wood/cataclysmdda
 	name = "деревянная дверь"
 	icon = 'ND/icons/cataclysmdda/cata_objects.dmi'
 	icon_state = "door"
@@ -630,7 +636,7 @@
 	icon_state = "fence"
 	opacity = 1
 
-/obj/structure/fence/door/cataclysmdda/wooden
+/obj/machinery/door/unpowered/simple/cataclysmdda/wooden
 	icon = 'ND/icons/cataclysmdda/cata_objects.dmi'
 	icon_state = "door_closed"
 
