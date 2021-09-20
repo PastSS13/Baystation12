@@ -420,3 +420,44 @@
 /obj/screen/health/Click(var/location, var/control, var/params)
 	usr.Click(usr, params)
 
+/obj/screen/arrow_to
+	name = "tracking"
+	icon_state = "arrow_to"
+	screen_loc = "CENTER, CENTER"
+	invisibility = 100
+	var/angle
+	var/mob/owner
+	var/atom/target
+	var/atom/last_target
+
+/obj/screen/arrow_to/proc/track(var/mob/T)
+	if(T == target)
+		return
+	last_target = target
+	target = T
+	invisibility = 0
+	update()
+	spawn(3 MINUTES)
+		end_tracking(T)
+
+/obj/screen/arrow_to/proc/update()
+
+	if(!target)
+		return
+
+	var/turf/O = get_turf(owner)
+	var/turf/T = get_turf(target)
+	var/target_angle = Get_Angle(O, T)
+	var/difference = target_angle - angle
+	angle = target_angle
+	var/matrix/final = matrix(transform)
+
+	final.Turn(difference)
+
+	animate(src, transform = final, time = 5, loop = 0)
+
+/obj/screen/arrow_to/proc/end_tracking(var/mob/T)
+	if(T == last_target)
+		return // target has changed
+	target = null
+	invisibility = 100

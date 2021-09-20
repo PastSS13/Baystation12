@@ -51,9 +51,16 @@
 	equipment_darkness_modifier = 0
 	equipment_overlays.Cut()
 
+//	if(istype(src.head, /obj/item/clothing/head))
+//		add_clothing_protection(head)
+//		update_helmet_vision(head)
+//		use_original_cone = FALSE
+
 	if(istype(glasses, /obj/item/clothing/glasses))
 		process_prescription(glasses)
-	
+
+
+
 	var/binoc_check
 	if(client)
 		binoc_check = client.view == world.view

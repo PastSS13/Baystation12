@@ -66,6 +66,7 @@
 
 	#include "forest-1.dmm"
 	#include "forest-2.dmm"
+	#include "forest-3.dmm"
 
 
 #elif !defined(MAP_OVERRIDE)

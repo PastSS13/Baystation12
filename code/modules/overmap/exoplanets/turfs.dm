@@ -122,7 +122,6 @@
 	dirt_color = "#e3e7e8"
 	footstep_type = /decl/footsteps/snow
 
-
 /turf/simulated/floor/exoplanet/snow/Initialize()
 	. = ..()
 	icon_state = pick("snow[rand(1,12)]","snow0")

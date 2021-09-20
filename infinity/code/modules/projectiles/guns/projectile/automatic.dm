@@ -69,7 +69,7 @@
 /obj/item/gun/projectile/automatic/bp15
 	name = "BP-15 PDW"
 	desc = "The BP-15 'Moloh' is a  personal defense weapon, produced by Aussec Armory for use by police spec ops or solders. Uses 5.7x28 mm rounds."
-	icon = 'infinity/icons/event/guns.dmi'
+	icon = 'ND/icons/event/guns1.dmi'
 	icon_state = "pdw"
 	item_state = "c20r"
 	item_icons = list(
@@ -102,7 +102,7 @@
 /obj/item/gun/projectile/automatic/invider
 	name = "Invider submachine gun"
 	desc = "The Invider is a Hi-tech and rapid firing SMG. Uses 4.6x30mm universal rounds."
-	icon = 'infinity/icons/event/guns.dmi'
+	icon = 'ND/icons/event/guns1.dmi'
 	icon_state = "pdw"
 	item_state = "c20r"
 	var/projetcile_type = 0

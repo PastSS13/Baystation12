@@ -112,3 +112,4 @@
 	var/list/descriptors
 
 	var/last_smelt = 0
+

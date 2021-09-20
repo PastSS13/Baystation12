@@ -129,6 +129,10 @@
 	icon_state = "medbay"
 	base_turf = /turf/simulated/floor/exoplanet/water/shallow
 
+/area/forest/city_ruins
+	name = "\improper city_ruins"
+	icon_state = "medbay"
+	base_turf = /turf/simulated/floor/asteroid/aired
 
 
 

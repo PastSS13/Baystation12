@@ -3,9 +3,11 @@
 //////////////////////////////////////////////////////
 
 /obj/structure/flora/tree/pine/dense
+	alpha = 170
 	opacity = TRUE
 
 /obj/structure/flora/tree/dead/firewood
+	alpha = 170
 
 /obj/structure/flora/tree/dead/firewood/attackby(obj/item/I, mob/user, params)
 	..()

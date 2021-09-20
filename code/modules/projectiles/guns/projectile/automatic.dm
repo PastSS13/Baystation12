@@ -393,3 +393,55 @@
 	firemodes = list(
 		list(mode_name="semi auto",       burst=1, fire_delay=2,    move_delay=null, one_hand_penalty=8, burst_accuracy=null, dispersion=null)
 		)
+
+	//NEXT_DAY_SERVER//
+/obj/item/gun/projectile/m16
+	name = "M16A1"
+	desc = "The assault rifle M16A1 made by Colt's Manufacturing LLC from blueprints of AR-15. A perfect choice for spreading democracy."
+	icon = 'icons/obj/ND/ND_gun/guns1.dmi'
+	icon_state = "m16a1gl"
+	item_state = "m16gl"
+	item_icons = list(
+	slot_r_hand_str = 'icons/obj/ND/ND_gun/right1.dmi',
+	slot_l_hand_str = 'icons/obj/ND/ND_gun/left1.dmi',
+		)
+	wielded_item_state = "m16gl-wielded"
+	w_class = ITEM_SIZE_HUGE
+	force = 12
+	caliber = CALIBER_RIFLE_MILITARY
+	load_method = MAGAZINE
+	auto_eject = 0
+	one_hand_penalty = 4
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1,    fire_delay=0,    move_delay=null, use_launcher=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3,    fire_delay=0,	  move_delay=null, use_launcher=null, one_hand_penalty=5, burst_accuracy=list(0,-0.6,-1.2), dispersion=list(0.4, 0.8, 1.2)),
+		list(mode_name="full auto",      burst=1, fire_delay=0,    burst_delay=1,      one_hand_penalty=5,                 burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.2, 1.2, 1.6, 1.6, 2.0), autofire_enabled = TRUE)
+	)
+
+/obj/item/gun/projectile/m60
+	name = "M60 machine gun"
+	desc = "A rather traditionally made M60 SAW with a pleasantly lacquered plastic pistol grip. Has 'Saco Defense - 1961' engraved on the reciever." //probably should refluff this
+	icon = 'icons/obj/ND/ND_gun/guns1.dmi'
+	icon_state = "m60"
+	item_state = "m60"
+	item_icons = list(
+	slot_r_hand_str = 'icons/obj/ND/ND_gun/right1.dmi',
+	slot_l_hand_str = 'icons/obj/ND/ND_gun/left1.dmi',
+	)
+	w_class = ITEM_SIZE_HUGE
+	force = 10
+	slot_flags = 0
+	max_shells = 50
+	caliber = CALIBER_RIFLE_MILITARY
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ESOTERIC = 2)
+	slot_flags = 0 //need sprites for SLOT_BACK
+	one_hand_penalty = 6
+	wielded_item_state = "m60-wielded"
+
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+	list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=4, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 1.6, 2.4, 2.4)),
+	list(mode_name="short bursts",   burst=5, fire_delay=null, one_hand_penalty=5, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.6, 1.6, 2.0, 2.0, 2.4)),
+	list(mode_name="full auto",      burst=1, fire_delay=0,    burst_delay=1,      one_hand_penalty=5,                 burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.2, 1.2, 1.6, 1.6, 2.0), autofire_enabled = TRUE)
+	)
+

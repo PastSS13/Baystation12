@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/meat/mutant
+/mob/living/simple_animal/hostile/hostiles/mutant
 	name = "mutant"
 	desc = "A monstrously huge wall of flesh, it looks like you took who knows how many humans and put them together..."
 	see_in_dark = 10
@@ -12,14 +12,14 @@
 
 
 /*
-/mob/living/simple_animal/hostile/mutant/death(gibbed)
+/mob/living/simple_animal/hostile/hostiles/mutant/death(gibbed)
 	..()
 	if(deletable)
 		spawn(300)
 			qdel(src)
 */
 /*
-/mob/living/simple_animal/hostile/mutant/Move(atom/NewLoc, direct)
+/mob/living/simple_animal/hostile/hostiles/mutant/Move(atom/NewLoc, direct)
 	if(get_area(NewLoc).safezone)
 		if(src.client && (src.client.prefs.chat_toggles & CHAT_LANGUAGE))
 			src << "<span class='warning'>You can't be here!</span>"
@@ -28,15 +28,13 @@
 		return 0
 	return ..()
 */
-/mob/living/simple_animal/hostile/mutant/AttackingTarget()
+/mob/living/simple_animal/hostile/hostiles/mutant/AttackingTarget()
 	..()
 	if(istype(target, /mob/living))
 		var/mob/living/L = target
 		if (L.stat == DEAD && gib_targets)
 			if(ishuman(L))
 				var/mob/living/carbon/human/H = L
-				if(prob(50))
-					H.unEquip(H.ears)
 				if(prob(50))
 					H.unEquip(H.gloves)
 				if(prob(50))
@@ -54,7 +52,7 @@
 			src << "<span class='userdanger'>Вы пожираете [L] и востанавливаете себе здоровье!</span>"
 			src.revive()
 
-/mob/living/simple_animal/hostile/mutant/mrspooky
+/mob/living/simple_animal/hostile/hostiles/mutant/mrspooky
 	name = "Mr.Spooky"
 	desc = "Ходячая груда костей, 3spooky5u"
 	icon = 'icons/mob/human.dmi'
@@ -77,14 +75,14 @@
 	see_in_dark = 8
 	layer = MOB_LAYER - 0.1
 
-/mob/living/simple_animal/hostile/mutant/spider
+/mob/living/simple_animal/hostile/hostiles/mutant/spider
 	name = "spider mutant"
 	desc = "Мутировавший паук. Если есть один - где-то не далеко и другие."
 	//eng_desc = "Mutant spider."
 	turns_per_move = 5
 	speed = 1
 	a_intent = "harm"
-	natural_weapon = /obj/item/natural_weapon/bite
+	natural_weapon = /obj/item/natural_weapon/claws/strong
 	icon = 'icons/stalker/metro-2/Metro_mobs.dmi'
 	icon_state = "spider"
 	icon_living = "spider"
@@ -100,19 +98,18 @@
 	see_in_dark = 8
 	environment_smash = 0
 	layer = MOB_LAYER - 0.1
-	attack_type = "bite"
 	move_to_delay = 1.2 //Real speed of a mob
 	//vision_range = 12
 	//aggro_//vision_range = 12
 
-/mob/living/simple_animal/hostile/mutant/ghoulupper
+/mob/living/simple_animal/hostile/hostiles/mutant/ghoulupper
 	name = "Mutant dog"
 	desc = "Один из наименее пострадавших представителей старого мира. Дворовая псина, одичавшая и получившая куда большую силу, чем ранее."
 	//eng_desc = "Just another ghoul."
 	turns_per_move = 5
 	speed = 1
 	a_intent = "harm"
-	natural_weapon = /obj/item/natural_weapon/bite
+	natural_weapon = /obj/item/natural_weapon/claws/strong
 	icon = 'icons/stalker/metro-2/stalker.dmi'
 	icon_state = "white_dog"
 	icon_living = "white_dog"
@@ -130,27 +127,26 @@
 	see_in_dark = 2
 	environment_smash = 0
 	layer = MOB_LAYER - 0.1
-	attack_type = "claw"
 	move_to_delay = 1.2 //Real speed of a mob
 	//vision_range = 10
 	//aggro_//vision_range = 10
 
-/mob/living/simple_animal/hostile/mutant/ghoulupper/AttackingTarget()
+/mob/living/simple_animal/hostile/hostiles/mutant/ghoulupper/AttackingTarget()
 	..()
 	if(istype(target, /mob/living/carbon))
 		var/mob/living/carbon/C = target
 		if(C.health > 25)
-			var/anydir = pick(alldirs)
+			var/anydir
 			target_last_loc = target.loc
 			walk_away(src, get_step(src, anydir), 7, move_to_delay)
 
-/mob/living/simple_animal/hostile/mutant/ghoul
+/mob/living/simple_animal/hostile/hostiles/mutant/ghoul
 	name = "Ghoul"
 	desc = "Упырь - и в Африке упырь. Таких стоит избегать, ходя по тоннелям в одиночку."
 	turns_per_move = 5
 	speed = 2
 	a_intent = "harm"
-	natural_weapon = /obj/item/natural_weapon/large
+	natural_weapon = /obj/item/natural_weapon/claws/strong
 	icon = 'icons/stalker/metro-2/Metro_mobs.dmi'
 	icon_state = "nosalis"
 	icon_living = "nosalis"
@@ -171,13 +167,12 @@
 	ranged = 1
 //	ranged_cooldown = 1 //By default, start the Goliath with his cooldown off so that people can run away quickly on first sight
 //	ranged_cooldown_cap = 2
-	attack_type = "claw"
 	var/leaping = 0
 	move_to_delay = 1.2
 	//vision_range = 15
 	//aggro_//vision_range = 15
 
-/mob/living/simple_animal/hostile/mutant/ghoul/New()
+/mob/living/simple_animal/hostile/hostiles/mutant/ghoul/New()
 	..()
 	if(prob(50))
 		icon = 'icons/stalker/metro-2/Metro_mobs.dmi'
@@ -185,7 +180,7 @@
 		icon_living = "nosalis"
 		icon_dead = "nosalis_dead"
 
-/mob/living/simple_animal/hostile/mutant/ghoul/OpenFire()
+/mob/living/simple_animal/hostile/hostiles/mutant/ghoul/OpenFire()
 	if(get_dist(src, target) <= 4)
 		leaping = 1
 		//throw_at_fast(target, 7, 1)
@@ -195,7 +190,7 @@
 	return
 				//sleep(10)
 
-/mob/living/simple_animal/hostile/mutant/ghoul/throw_impact(atom/A)
+/mob/living/simple_animal/hostile/hostiles/mutant/ghoul/throw_impact(atom/A)
 
 	if(!leaping)
 		return ..()
@@ -206,7 +201,7 @@
 			var/blocked = 0
 			if(ishuman(A))
 				var/mob/living/carbon/human/H = A
-				if(H.check_shields(90, "the [name]", src, attack_type = THROWN_PROJECTILE_ATTACK))
+				if(H.check_shields(90, "the [name]", src, natural_weapon = "THROWN_PROJECTILE_ATTACK"))
 					blocked = 1
 			if(!blocked)
 				L.visible_message("<span class ='danger'>[src] pounces on [L]!</span>", "<span class ='userdanger'>[src] pounces on you!</span>")
@@ -220,9 +215,9 @@
 		if(leaping)
 			leaping = 0
 			update_icons()
-			update_canmove()
 
-/mob/living/simple_animal/hostile/mutant/flesh
+
+/mob/living/simple_animal/hostile/hostiles/mutant/flesh
 	name = "flesh"
 	desc = "Мутировавшая свинья."
 	turns_per_move = 5
@@ -231,7 +226,7 @@
 	icon_state = "plot"
 	icon_living = "plot"
 	icon_dead = "plot_dead"
-	natural weapon = /obj/item/natural_weapon/claws
+	natural_weapon = /obj/item/natural_weapon/claws/strong
 	attacktext = "crashes into"
 	maxHealth = 40
 	//healable = 5
@@ -244,12 +239,11 @@
 	environment_smash = 1
 	//deathmessage = "The flesh makes a death scream!"
 	layer = MOB_LAYER - 0.1
-	attack_type = "smash"
 	move_to_delay = 3
 	//vision_range = 7
 	//aggro_//vision_range = 7
 
-/mob/living/simple_animal/hostile/mutant/kaban
+/mob/living/simple_animal/hostile/hostiles/mutant/kaban
 	name = "boar"
 	desc = "Коренное население."
 	//eng_desc = "While less touched by mutation physically, as compared to other mutants, the Boars of the Zone remains ugly and loathsome.The smell coming from his mouth smells of carrion and grass.His posture shows that he is able to go at full speed towards an enemy, so staying away would be the best option to kill him. His meat is sold at a good price to Skadovsk merchants."
@@ -285,7 +279,7 @@
 	layer = MOB_LAYER - 0.1
 	//random_loot = 1
 	//atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	attack_type = "smash"
+	natural_weapon = /obj/item/natural_weapon/claws/strong
 	move_to_delay = 3
 	//rating_add = 50
 	//vision_range = 7
@@ -298,7 +292,7 @@
 	L.throw_at(target, 200, 100)
 	*/
 
-/mob/living/simple_animal/hostile/mutant/bloodsucker
+/mob/living/simple_animal/hostile/hostiles/mutant/bloodsucker
 	name = "bloodsucker"
 	desc = "Твой худший ночной кошмар."
 	//eng_desc = "A rather disgusting-looking type of mutant with the same physical properties as a human besides the absence of genital organs,thus making the difference between male or female more difficult to do.Tentacles covered with blood seem to have replaced the lower part of the jaw, and sharp claws have replaced the end of the fingers.The guttural breathing of the mutant freezes your blood."
@@ -330,23 +324,22 @@
 
 	//deathmessage = "The bloodsucker makes a death scream!"
 	layer = MOB_LAYER - 0.1
-	loot = list(/obj/item/weapon/stalker/loot/bloodsucker, /obj/item/weapon/stalker/loot/bloodsucker, /obj/nothing)
 	//random_loot = 1
 	//atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	attack_type = "claw"
+	natural_weapon = /obj/item/natural_weapon/claws/strong
 	move_to_delay = 1.8
-	speak_chance = 0.5
+
 	//rating_add = 150
 	//vision_range = 7
 	//aggro_//vision_range = 7
 
-/mob/living/simple_animal/hostile/mutant/bloodsucker/Life()
+/mob/living/simple_animal/hostile/hostiles/mutant/bloodsucker/Life()
 	if(..())
 		if(ckey)
 			return
 		handle_invisibility()
 
-/mob/living/simple_animal/hostile/mutant/bloodsucker/proc/handle_invisibility()
+/mob/living/simple_animal/hostile/hostiles/mutant/bloodsucker/proc/handle_invisibility()
 	if(target)
 		playsound(src, 'sound/stalker/mobs/mutants/idle/bloodsucker_breath.ogg', 40, 0)
 		switch(get_dist(src, target))
@@ -359,18 +352,18 @@
 	if(icon_state != initial(icon_state))
 		icon_state = initial(icon_state)
 
-/mob/living/simple_animal/hostile/mutant/bloodsucker/AttackingTarget()
+/mob/living/simple_animal/hostile/hostiles/mutant/bloodsucker/AttackingTarget()
 	..()
 	icon_state = "bloodsucker"
 	if(istype(target, /mob/living/carbon))
 		var/mob/living/carbon/C = target
 		if(C.health > 35)
 			icon_state = "bloodsucker_invisible"
-			var/anydir = pick(alldirs)
+			var/anydir
 			target_last_loc = target.loc
 			walk_away(src, get_step(src, anydir), 7, move_to_delay)
 
-/mob/living/simple_animal/hostile/mutant/pseudog
+/mob/living/simple_animal/hostile/hostiles/mutant/pseudog
 	name = "psy-dog"
 	desc = "Лохматый пёс."
 	//eng_desc = "Shaggy dog."
@@ -407,8 +400,7 @@
 	layer = MOB_LAYER - 0.1
 	//random_loot = 1
 	//atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	attack_type = "bite"
+	natural_weapon = /obj/item/natural_weapon/claws/strong
 	move_to_delay = 1.4
-	speak_chance = 10
 	//rating_add = 100
 

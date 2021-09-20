@@ -748,6 +748,7 @@
 				// Generate a by-limb health display.
 				healths.icon_state = "blank"
 
+
 				var/no_damage = 1
 				var/trauma_val = 0 // Used in calculating softcrit/hardcrit indicators.
 				if(can_feel_pain())
@@ -1173,3 +1174,11 @@
 	..()
 	if((CE_THIRDEYE in chem_effects) || (MUTATION_XRAY in mutations))
 		set_sight(sight|SEE_TURFS|SEE_MOBS|SEE_OBJS)
+
+		var/whitenoisealpha = 0
+		if(stat != DEAD)
+			whitenoisealpha = min(75, radiation*0.15)
+		whitenoise.alpha = whitenoisealpha
+	..()
+
+	return 1

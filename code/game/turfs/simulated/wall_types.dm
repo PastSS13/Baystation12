@@ -153,6 +153,10 @@
 /turf/simulated/wall/concrete/New(var/newloc)
 	..(newloc,MATERIAL_CONCRETE)
 
+/turf/simulated/wall/cataclysmdda
+	icon = 'ND/icons/cataclysmdda/wall01.dmi'
+	icon_state = "wall-0"
+
 //Alien metal walls
 /turf/simulated/wall/alium
 	icon_state = "jaggy"

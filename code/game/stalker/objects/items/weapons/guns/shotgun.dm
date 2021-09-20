@@ -1,7 +1,7 @@
-/obj/item/weapon/gun/projectile/revolver
+/obj/item/gun/projectile/shotgun/next_day
 	modifications = list("barrel_shotgun" = 0, "frame_shotgun" = 0, "grip_shotgun" = 0)
 
-/obj/item/weapon/gun/projectile/revolver/bm16  // Горизонталка
+/obj/item/gun/projectile/shotgun/next_day/bm16  // Горизонталка
 	name = "BM-16"
 	desc = "Охотничье ружьё - горизонталка. Довольно мощное, в самый раз дл&#255; охоты."
 	eng_desc = "The original Bm16 rifle. Heavy and dangerous two barrel rifle, and its effective in high range too."
@@ -22,11 +22,11 @@
 	can_scope = 1
 	weapon_weight = WEAPON_MEDIUM
 	fire_sound = 'sound/stalker/weapons/bm16_shot.ogg'
-	loadsound = 'sound/stalker/weapons/load/obrez_load.ogg'
-	opensound = 'sound/stalker/weapons/unload/obrez_open.ogg'
-	drawsound = 'sound/stalker/weapons/draw/shotgun_draw.ogg'
+	load_sound = 'sound/stalker/weapons/load/obrez_load.ogg'
+	open_sound = 'sound/stalker/weapons/unload/obrez_open.ogg'
+	draw_sound = 'sound/stalker/weapons/draw/shotgun_draw.ogg'
 
-/obj/item/weapon/gun/projectile/revolver/bm16/attackby(obj/item/A, mob/user, params)
+/obj/item/gun/projectile/shotgun/next_day/bm16/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/ammo_box) || istype(A, /obj/item/ammo_casing))
 		//playsound(user, loadsound, 50, 1)
@@ -38,7 +38,7 @@
 	if(istype(A, /obj/item/weapon/circular_saw) || istype(A, /obj/item/weapon/gun/energy/plasmacutter))
 		sawoff(user)
 
-/obj/item/weapon/gun/projectile/revolver/bm16/attack_self(mob/living/user)
+/obj/item/gun/projectile/shotgun/next_day/bm16/attack_self(mob/living/user)
 	var/num_unloaded = 0
 	while (get_ammo() > 0)
 		var/obj/item/ammo_casing/CB
@@ -53,7 +53,7 @@
 	else
 		user << "<span class='warning'>[src] is empty!</span>"
 
-/obj/item/weapon/gun/projectile/revolver/bm16/toz34  //  Вертикалка
+/obj/item/gun/projectile/shotgun/next_day/bm16/toz34  //  Вертикалка
 	name = "TOZ-34"
 	desc = "Внутрикурковое двуствольное охотничье ружье с вертикально расположенными стволами. Широко распространённое и ничем особо не примечательное охотничье ружьё - 'вертикалка'."
 	eng_desc = "This extremely common over-and-under hunting shotgun can offer better protection against mutants than a pistol, thanks to its accuracy and stopping power. Used mostly by rookies on the outskirts of the Zone."
@@ -71,7 +71,7 @@
 /obj/item/weapon/gun/projectile/shotgun
 	modifications = list("barrel_shotgun" = 0, "frame_shotgun" = 0, "grip_shotgun" = 0)
 
-/obj/item/weapon/gun/projectile/revolver/bm16/sawnoff
+/obj/item/gun/projectile/shotgun/next_day/bm16/sawnoff
 	name = "sawed-off BM-16"
 	desc = "Значительно компактней и легче новой двустволки, но эффективен только в ближнем бою. Один из самых распространённых видов оружи&#255; у новичков."
 	eng_desc = "A sawed-off hunting shotgun with two side-by-side barrels, making it lighter and more compact than a full shotgun. One of the most popular weapons among bandits due to its combination of ease of concealment and extreme effectiveness in close combat."
@@ -87,7 +87,7 @@
 	damagelose = 0.45
 	distro = 35
 
-/obj/item/weapon/gun/projectile/revolver/bm16/sawnoff/New()
+/obj/item/gun/projectile/shotgun/next_day/bm16/sawnoff/New()
 	..()
 	update_icon()
 
@@ -114,7 +114,7 @@
 	drawsound = 'sound/stalker/weapons/draw/shotgun_draw.ogg'
 	can_scope = 1
 
-/obj/item/weapon/gun/projectile/revolver/metro/douplet
+/obj/item/gun/projectile/shotgun/next_day/metro/douplet
 	name = "Doublet"
 	desc = "Собранный местными 'мастерами' двухствольный дробовик. Наименован таким словом как 'Дуплет'."
 	eng_desc = "Makeshift doublebarrel shotgun, named 'Doublet'."
@@ -135,11 +135,11 @@
 	opensound = 'sound/stalker/weapons/unload/obrez_open.ogg'
 	drawsound = 'sound/stalker/weapons/draw/shotgun_draw.ogg'
 
-/obj/item/weapon/gun/projectile/revolver/metro/douplet/New()
+/obj/item/gun/projectile/shotgun/next_day/metro/douplet/New()
 	..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/revolver/metro/ashot
+/obj/item/gun/projectile/shotgun/next_day/metro/ashot
 	name = "Ashot"
 	desc = "Несмотр&#255; на примитивность конструкции, этот массово производ&#255;щийс&#255; в Метро картечный пистолет &#255;вл&#255;етс&#255; мощным и надёжным оружием ближнего бо&#255;."
 	eng_desc = "Makeshift onelebarrel shotgun, named 'Ashot'. Very effective in small distance."
@@ -160,11 +160,11 @@
 	opensound = 'sound/stalker/weapons/unload/obrez_open.ogg'
 	drawsound = 'sound/stalker/weapons/draw/shotgun_draw.ogg'
 
-/obj/item/weapon/gun/projectile/revolver/metro/ashot/New()
+/obj/item/gun/projectile/shotgun/next_day/metro/ashot/New()
 	..()
 	update_icon()
 
-/obj/item/weapon/gun/projectile/revolver/metro/ashotdouble
+/obj/item/gun/projectile/shotgun/next_day/metro/ashotdouble
 	name = "Ashot"
 	desc = "Несмотр&#255; на примитивность конструкции, этот массово производ&#255;щийс&#255; в Метро картечный пистолет &#255;вл&#255;етс&#255; мощным и надёжным оружием ближнего бо&#255;."
 	eng_desc = "Makeshift onelebarrel shotgun, named 'Ashot'. Very effective in small distance."
@@ -186,6 +186,6 @@
 	opensound = 'sound/stalker/weapons/unload/obrez_open.ogg'
 	drawsound = 'sound/stalker/weapons/draw/shotgun_draw.ogg'
 
-/obj/item/weapon/gun/projectile/revolver/metro/ashotdouble/New()
+/obj/item/gun/projectile/shotgun/next_day/metro/ashotdouble/New()
 	..()
 	update_icon()

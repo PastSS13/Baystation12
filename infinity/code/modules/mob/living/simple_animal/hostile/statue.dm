@@ -1,8 +1,8 @@
 /mob/living/simple_animal/hostile/statue
 	name = "Statue"
 	desc = "A statue, constructed from concrete and rebar with traces of Krylon brand spray paint."
-	icon = 'infinity/icons/mob/statue.dmi'
-	icon_state = "statue"
+	icon = 'icons/stalker/some_stuff/mob.dmi'
+	icon_state = "cam"
 	universal_understand = 1
 	mob_size = 100
 	can_bleed = FALSE
@@ -68,7 +68,7 @@
 		if (target)	// NECK SNAP TIME
 			var/turf/spot
 			var/turf/behind_target = get_step(target.loc, turn(target.dir, 180))
-			if(isfloor(behind_target) && get_dist(behind_target, loc) <= 7 && not_turf_contains_dense_objects(behind_target))
+			if(isturf(behind_target) && get_dist(behind_target, loc) <= 7 && not_turf_contains_dense_objects(behind_target))
 				spot = behind_target
 			else
 				var/list/directions = shuffle(GLOB.cardinal.Copy())
@@ -76,7 +76,7 @@
 					var/turf/T = get_step(target, D)
 					if(turf_contains_dense_objects(T))
 						continue
-					if(isfloor(T) && get_dist(T, loc) <= 7)
+					if(isturf(T) && get_dist(T, loc) <= 7)
 						spot = T
 						break
 			if(!spot)
@@ -86,8 +86,8 @@
 			if(!IsBeingWatched())
 				visible_message("<span class='danger'>[src] snaps [target]'s neck!</span>")
 				playsound(get_turf(src), pick(snap_sound), 50, 1)
-				target.apply_damage(75, BRUTE, BP_HEAD)
-				target.death()
+				target.apply_damage(500, OXY, BP_HEAD)
+				target.death(prob(65))
 				if(prob(25))
 					playsound(get_turf(src), pick(scare_sound), 25, 1)
 			else
@@ -268,7 +268,7 @@
 	icon = 'infinity/icons/obj/statue_cage.dmi'
 	icon_state = "2"
 	layer = MOB_LAYER + 0.05
-	plane = MOB_PLANE
+	plane = DEFAULT_PLANE
 	name = "cage"
 	desc = "An elongated cage with an unusual lever below."
 	density = TRUE
@@ -314,3 +314,10 @@
 
 /obj/structure/statue_cage/on_update_icon()
 	icon_state = contained ? "1" : "2"
+
+
+
+/mob/living/simple_animal/hostile/statue/shade
+	name = "Тень"
+	desc = "Вы смотрите на эту тень, и кажется, что она отвечает взаимностью. Вам так и хочется закрыть глаза при виде этого существа, но вы чувствуете, что это погибель."
+	icon_state = "grue"

@@ -542,6 +542,11 @@ default behaviour is:
 		for(var/mob/living/carbon/slime/M in view(1,src))
 			M.UpdateFeed()
 
+	for(var/mob/M in oview(src))
+		M.update_vision_cone()
+
+	update_vision_cone()
+
 /mob/living/proc/can_pull()
 	if(!moving)
 		return FALSE
@@ -824,6 +829,11 @@ default behaviour is:
 /mob/living/update_icons()
 	if(auras)
 		overlays |= auras
+	else
+		..()
+/mob/living/set_dir()
+	..()
+	update_vision_cone()
 
 /mob/living/proc/add_aura(var/obj/aura/aura)
 	LAZYDISTINCTADD(auras,aura)

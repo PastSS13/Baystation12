@@ -655,7 +655,7 @@ var/global/serials = list()
 	set name = "Use Scope"
 	set popup_menu = 1
 
-	toggle_scope(usr, scope_zoom)
+	toggle_scope(usr,scope_zoom)
 
 /obj/item/gun/proc/toggle_scope(mob/user, var/zoom_amount=2.0)
 	//looking through a scope limits your periphereal vision

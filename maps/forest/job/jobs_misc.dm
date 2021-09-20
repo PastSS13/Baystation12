@@ -73,7 +73,8 @@
 */
 
 /datum/job/stowaway
-	title = "Mestni"
+	var/landmark_id = "DikiySpawn"
+	title = "Dikiy"
 	department = "Civilian"
 	department_flag = CIV
 	supervisors = "Вождю"
@@ -85,6 +86,7 @@
 	ideal_character_age = 30
 	minimal_player_age = 7
 	create_record = 0
+	latejoin_at_spawnpoints = 1
 	account_allowed = 0
 	alt_titles = list(
         "Bandit",
@@ -93,7 +95,9 @@
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	announced = FALSE
 
+
 	access = list(access_maint_tunnels, access_emergency_storage)
 	minimal_access = list()
 /datum/job/stowaway/get_description_blurb()
 	return "Вы житель этой планеты. Бандитство или честный образ жизни - решать Вам."
+

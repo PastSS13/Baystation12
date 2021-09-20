@@ -276,6 +276,25 @@
 
 	mymob.pain = new /obj/screen/fullscreen/pain( null )
 	hud_elements |= mymob.pain
+//NEXT_DAY//
+	mymob.noise1 = new /obj/screen()
+	mymob.noise1.icon = 'icons/mob/noise.dmi'
+	mymob.noise1.icon_state = pick("1", "2", "3")
+	mymob.noise1.name = " "
+	mymob.noise1.screen_loc = "1,1 to 15,15"
+	mymob.noise1.mouse_opacity = 0
+	hud_elements |= mymob.noise1
+
+//NEXT_DAY//
+	mymob.whitenoise = new /obj/screen()
+	mymob.whitenoise.icon = 'icons/mob/screen_full.dmi'
+	mymob.whitenoise.icon_state = "whitenoise"
+	mymob.whitenoise.name = "whitenoise"
+	mymob.whitenoise.blend_mode = BLEND_ADD
+	mymob.whitenoise.screen_loc = "CENTER-7,CENTER-7"
+	mymob.whitenoise.mouse_opacity = 0
+	mymob.whitenoise.layer = 18.05
+	mymob.whitenoise.alpha = 0
 
 	mymob.zone_sel = new /obj/screen/zone_sel( null )
 	mymob.zone_sel.icon = ui_style
@@ -306,6 +325,18 @@
 	mymob.radio_use_icon.icon = ui_style
 	mymob.radio_use_icon.color = ui_color
 	mymob.radio_use_icon.alpha = ui_alpha
+
+	//NEXT_DAY//
+	mymob.fov = new /obj/screen()
+	mymob.fov.icon = 'icons/mob/hide.dmi'
+	mymob.fov.icon_state = "combat"
+	mymob.fov.name = " "
+	mymob.fov.screen_loc = "1,1"
+	mymob.fov.mouse_opacity = 0
+	mymob.fov.layer = UNDER_HUD_LAYER
+	hud_elements |= mymob.fov
+
+	//NEXT_DAY//
 
 	mymob.client.screen = list()
 
@@ -431,3 +462,5 @@
 			return
 	//[/INF]
 		usr.set_next_usable_move_intent()
+
+

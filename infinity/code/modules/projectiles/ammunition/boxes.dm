@@ -88,7 +88,7 @@
 
 /obj/item/ammo_magazine/mc57
 	name = "magazine (5.7mm)"
-	icon = 'infinity/icons/event/ammo.dmi'
+	icon = 'ND/icons/event/ammo.dmi'
 	icon_state = "smg"
 	mag_type = MAGAZINE
 	ammo_type = /obj/item/ammo_casing/c57
@@ -101,7 +101,7 @@
 
 /obj/item/ammo_magazine/uni46x30mm
 	name = "magazine (4.6x30mm universal)"
-	icon = 'infinity/icons/event/ammo.dmi'
+	icon = 'ND/icons/event/ammo.dmi'
 	icon_state = "smg"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
