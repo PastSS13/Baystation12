@@ -1,6 +1,6 @@
 /obj/item/material/knife/combat/tourist
 	name = "hunting knife"
-	desc = "Дешевый нож для разделывания добычи...И людей."
+	desc = "Р”РµС€РµРІС‹Р№ РЅРѕР¶ РґР»СЏ СЂР°Р·РґРµР»С‹РІР°РЅРёСЏ РґРѕР±С‹С‡Рё...Р Р»СЋРґРµР№."
 	icon = 'icons/stalker/lohweb/weapons.dmi'
 	icon_state = "hunting"
 	slot_flags = SLOT_BELT
@@ -12,7 +12,7 @@
 
 /obj/item/material/knife/plasteel/bayonet
 	name = "bayonet"
-	desc = "Опасный, но плохой в разделке туш мутантов штык-нож."
+	desc = "РћРїР°СЃРЅС‹Р№, РЅРѕ РїР»РѕС…РѕР№ РІ СЂР°Р·РґРµР»РєРµ С‚СѓС€ РјСѓС‚Р°РЅС‚РѕРІ С€С‚С‹Рє-РЅРѕР¶."
 	icon = 'icons/stalker/weapons.dmi'
 	icon_state = "bayonet"
 	slot_flags = SLOT_BELT

@@ -42,6 +42,33 @@
 	. = ..()
 	QDEL_NULL(S)
 
+/obj/effect/icarus_irradiate/mega
+	name = "SEV Icarus Radiation Spawner"
+	icon = 'icons/effects/landmarks.dmi'
+	icon_state = "x2"
+	req_range = 100
+	radiation_power = 80
+
+/obj/effect/icarus_irradiate/mega/Initialize()
+	. = ..()
+
+	name = null
+	icon = null
+	icon_state = null
+
+	S = new()
+	S.flat = TRUE
+	S.range = req_range
+	S.respect_maint = FALSE
+	S.decay = FALSE
+	S.source_turf = get_turf(src)
+	S.update_rad_power(radiation_power)
+	SSradiation.add_source(S)
+	loc.set_light(0.4, 1, req_range, l_color = COLOR_LIME)
+
+/obj/effect/icarus_irradiate/mega/Destroy()
+	. = ..()
+	QDEL_NULL(S)
 //Areas
 
 /area/map_template/icarus

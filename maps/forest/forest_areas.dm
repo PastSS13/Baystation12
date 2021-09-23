@@ -2,21 +2,26 @@
 	name = "\improper Snow Forest"
 	icon_state = "ai"
 	base_turf = /turf/simulated/floor/asteroid/aired
+	sound_env = LARGE_ENCLOSED
+
 
 
 /area/forest/survivors_cave
 	name = "\improper Survivors Cave"
 	icon_state = "bridge"
+	sound_env = SMALL_ENCLOSED
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/forest/survivors_cave_med
 	name = "\improper Survivors Cave Medical"
 	icon_state = "bridge"
+	sound_env = SMALL_ENCLOSED
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 /area/forest/survivors_cave_cargo
 	name = "\improper Survivors Cave Cargo"
 	icon_state = "bridge"
+	sound_env = SMALL_ENCLOSED
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
 
@@ -130,9 +135,25 @@
 	base_turf = /turf/simulated/floor/exoplanet/water/shallow
 
 /area/forest/city_ruins
-	name = "\improper city_ruins"
+	name = "\improper city ruins"
 	icon_state = "medbay"
 	base_turf = /turf/simulated/floor/asteroid/aired
+	area_flags = AREA_FLAG_NO_MODIFY
+
+
+/area/forest/teleporter
+	name = "Teleporter"
+	icon_state = "teleporter"
+	sound_env = SMALL_ENCLOSED
+	req_access = list(access_explorer)
+
+
+/area/forest/teleporter2
+	name = "city teleporter"
+	icon_state = "teleporter"
+	sound_env = SMALL_ENCLOSED
+	req_access = null
+	requires_power = 0
 
 
 

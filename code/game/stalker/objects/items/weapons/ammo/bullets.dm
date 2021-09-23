@@ -53,7 +53,7 @@
 	fire_sound = 'sound/stalker/weapons/pm_shot.ogg'
 
 /obj/item/projectile/bullet/bullet9x39
-	damage = 22
+	damage = 39
 	armor_penetration = 50
 	fire_sound = 'sound/stalker/weapons/pb_shot.ogg'
 

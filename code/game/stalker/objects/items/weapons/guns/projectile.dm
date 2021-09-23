@@ -15,6 +15,11 @@
 	magazine_type = /obj/item/ammo_magazine/stalker/m9x18pm
 	allowed_magazines = /obj/item/ammo_magazine/stalker/m9x18pm
 	ammo_type = list( /obj/item/projectile/bullet/bullet9x18, /obj/item/projectile/bullet/bullet9x18P)
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+		)
+	safety_icon = "safety"
 	force = 10
 	can_suppress = 1
 	can_unsuppress = 1
@@ -39,6 +44,11 @@
 	magazine_type = /obj/item/ammo_magazine/stalker/tt
 	allowed_magazines = /obj/item/ammo_magazine/stalker/tt
 	ammo_type = /obj/item/projectile/bullet/bullet762x25
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+		)
+	safety_icon = "safety"
 	force = 10
 	can_suppress = 0
 	can_unsuppress = 0
@@ -59,6 +69,11 @@
 	icon_state = "fort12"
 	fire_sound = 'sound/stalker/weapons/fort_shot.ogg'
 	caliber = "9x18mm"
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+		)
+	safety_icon = "safety"
 	w_class = 2
 	magazine_type = /obj/item/ammo_magazine/stalker/m9x18fort
 	allowed_magazines = /obj/item/ammo_magazine/stalker/m9x18fort
@@ -84,12 +99,24 @@
 	icon_state = "pb1s"
 	w_class = 2
 	caliber = "9x18mm"
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+		)
+	safety_icon = "safety"
 	fire_sound = 'sound/stalker/weapons/pb_shot.ogg'
 	magazine_type = /obj/item/ammo_magazine/stalker/m9x18pm
 	allowed_magazines = /obj/item/ammo_magazine/stalker/m9x18pm
 	ammo_type = list (/obj/item/projectile/bullet/bullet9x18P, /obj/item/projectile/bullet/bullet9x18)
 	force = 10
 	suppressed = 1
+	silenced = 1
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+	list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=4, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 1.6, 2.4, 2.4)),
+	list(mode_name="short bursts",   burst=5, fire_delay=null, one_hand_penalty=5, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.6, 1.6, 2.0, 2.0, 2.4)),
+	list(mode_name="full auto",      burst=1, fire_delay=0,    burst_delay=1,      one_hand_penalty=5,                 burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.2, 1.2, 1.6, 1.6, 2.0), autofire_enabled = TRUE)
+	)
 	load_method = MAGAZINE
 	can_suppress = 0
 	can_unsuppress = 0
@@ -107,6 +134,11 @@
 	//eng_desc = "Impeccable reliability and //durabilitycombined with excellent accuracy are the main noteworthy features of this weapon. Its minor drawbacks include its considerable size, relatively high center of gravity and massive bolt, which make it difficult to conceal but do not outweigh the weapon's positive features. The weapon is especially popular with the Zone's veterans."
 	icon = 'ND/obj/guns/projectile.dmi'
 	icon_state = "usp-match"
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+		)
+	safety_icon = "safety"
 	w_class = 2
 	caliber = ".45"
 	magazine_type = /obj/item/ammo_magazine/stalker/usp45
@@ -130,6 +162,11 @@
 	//eng_desc = "An extremely powerful gun, featured in many Hollywood movies and popularised by criminals. Truly a killing machine for close-range combat."
 	icon = 'ND/obj/guns/projectile.dmi'
 	icon_state = "desert"
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+		)
+	safety_icon = "safety"
 	w_class = 3
 	caliber = ".44"
 	fire_sound = 'sound/stalker/weapons/desert_shot.ogg'
@@ -291,6 +328,14 @@
 	//eng_desc = "This weapon, designed in 1974, signaled the adoption of small caliber and low impulse rounds by Warsaw Pact countries. A descendant of the most popular assault rifle in the world, the AK-74 has an even bigger muzzle brake, resulting in a reduction of what was already manageable //recoil. This facilitates better accuracy and groupings, especially when fired in fast single shots or bursts. As before, the rifle is very simple and reliable."
 	icon = 'ND/obj/guns/projectile.dmi'
 	icon_state = "ak74"
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+	slot_back_str = 'ND/icons/obj/back.dmi',
+	wielded_icon = 'ND/icons/obj/guns_lefthand.dmi',
+	wielded_item_state = "ak74"
+		)
+	safety_icon = "safety"
 	item_state = "ak74"//"normal"
 	slot_flags = SLOT_BACK//|SLOT_BELT
 	force = 15
@@ -312,6 +357,13 @@
 	can_scope = 1
 	bulk = GUN_BULK_RIFLE
 	//draw_sound = 'sound/stalker/weapons/draw/ak74_draw.ogg'
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+	list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=4, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 1.6, 2.4, 2.4)),
+	list(mode_name="short bursts",   burst=5, fire_delay=null, one_hand_penalty=5, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.6, 1.6, 2.0, 2.0, 2.4)),
+	list(mode_name="full auto",      burst=1, fire_delay=0,    burst_delay=1,      one_hand_penalty=5,                 burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.2, 1.2, 1.6, 1.6, 2.0), autofire_enabled = TRUE)
+	)
+
 
 /obj/item/gun/projectile/next_day/aksu74  // АКС74У
 	name = "AK 74S"
@@ -320,6 +372,13 @@
 	icon = 'ND/obj/guns/projectile.dmi'
 	icon_state = "aksu74"
 	item_state = "aksu74"
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+	slot_back_str = 'ND/icons/obj/back.dmi',
+	wielded_icon = 'ND/icons/obj/guns_lefthand.dmi',
+	wielded_item_state = "aksu74"
+		)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	caliber = "5.45x39"
@@ -338,6 +397,13 @@
 	can_scope = 1
 	bulk = GUN_BULK_RIFLE
 	//draw_sound = 'sound/stalker/weapons/draw/ak74u_draw.ogg'
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+	list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=4, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 1.6, 2.4, 2.4)),
+	list(mode_name="short bursts",   burst=5, fire_delay=null, one_hand_penalty=5, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.6, 1.6, 2.0, 2.0, 2.4)),
+	list(mode_name="full auto",      burst=1, fire_delay=0,    burst_delay=1,      one_hand_penalty=5,                 burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.2, 1.2, 1.6, 1.6, 2.0), autofire_enabled = TRUE)
+	)
+
 
 /*
 /obj/item/gun/projectile/next_day/Next_day/aksu74/black  // АКС74У - черный цвет
@@ -383,8 +449,17 @@
 	magazine_type = /obj/item/ammo_magazine/stalker/ppsh
 	allowed_magazines = /obj/item/ammo_magazine/stalker/ppsh
 	ammo_type = /obj/item/projectile/bullet/bullet762x25
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+	slot_back_str = 'ND/icons/obj/back.dmi',
+	back_item_state = "berettam38",
+	wielded_icon = 'ND/icons/obj/guns_lefthand.dmi',
+	wielded_item_state = "bastard"
+		)
+	slot_flags
 	can_suppress = 0
-	slot_flags = SLOT_BELT
+	slot_flags = list (SLOT_BELT|SLOT_BACK)
 	//durability= 50
 	w_class = 4
 	//spread = 9
@@ -395,6 +470,12 @@
 	//draw_sound = 'sound/stalker/weapons/draw/mp5_draw.ogg'
 	mag_insert_sound = 'sound/stalker/weapons/load/mp5_load.ogg'
 	mag_remove_sound = 'sound/stalker/weapons/unload/mp5_open.ogg'
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+	list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=4, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 1.6, 2.4, 2.4)),
+	list(mode_name="short bursts",   burst=5, fire_delay=null, one_hand_penalty=5, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.6, 1.6, 2.0, 2.0, 2.4)),
+	list(mode_name="full auto",      burst=1, fire_delay=0,    burst_delay=1,      one_hand_penalty=5,                 burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.2, 1.2, 1.6, 1.6, 2.0), autofire_enabled = TRUE)
+	)
 
 /*/obj/item/gun/projectile/next_day/ak74/tact  // AK-74
 	name = "Tactical AK 74"
@@ -448,6 +529,10 @@
 	can_scope = 1
 	bulk = GUN_BULK_RIFLE
 	//draw_sound = 'sound/stalker/weapons/draw/ak74_draw.ogg'
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+
+	)
 
 
 /*/obj/item/gun/projectile/next_day/metro/saiga12  // Сайга
@@ -487,6 +572,14 @@
 	allowed_magazines = /obj/item/ammo_magazine/stalker/m545
 	ammo_type = list (/obj/item/projectile/bullet/bullet545, /obj/item/projectile/bullet/bullet545AP)
 	fire_sound = 'sound/stalker/weapons/abakan_shoot.ogg'
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+	slot_back_str = 'ND/icons/obj/back.dmi',
+	back_item_state = "abakan",
+	wielded_icon = 'ND/icons/obj/guns_lefthand.dmi',
+	wielded_item_state = "ak12"
+	)
 	can_suppress = 1
 	//durability= 200
 	w_class = 4
@@ -498,6 +591,12 @@
 	//draw_sound = 'sound/stalker/weapons/draw/abakan_draw.ogg'
 	mag_insert_sound = 'sound/stalker/weapons/load/abakan_load.ogg'
 	mag_remove_sound = 'sound/stalker/weapons/unload/abakan_open.ogg'
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+	list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=4, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 1.6, 2.4, 2.4)),
+	list(mode_name="short bursts",   burst=5, fire_delay=null, one_hand_penalty=5, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.6, 1.6, 2.0, 2.0, 2.4)),
+	list(mode_name="full auto",      burst=1, fire_delay=0,    burst_delay=1,      one_hand_penalty=5,                 burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.2, 1.2, 1.6, 1.6, 2.0), autofire_enabled = TRUE)
+	)
 
 /obj/item/gun/projectile/next_day/fnf2000  // fnf2000
 	name = "FN-F2000"
@@ -515,6 +614,14 @@
 	allowed_magazines = /obj/item/ammo_magazine/stalker/m556x45
 	ammo_type = list (/obj/item/projectile/bullet/bullet556x45, /obj/item/projectile/bullet/bullet556x45AP)
 	fire_sound = 'sound/stalker/weapons/fnf2000_shoot.ogg'
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+	slot_back_str = 'ND/icons/obj/back.dmi',
+	back_item_state = "fnf2000",
+	wielded_icon = 'ND/icons/event/left1.dmi',
+	wielded_item_state = "m16gl-wielded"
+	)
 	can_suppress = 0
 	//durability= 250
 	w_class = 4
@@ -526,6 +633,12 @@
 	//draw_sound = 'sound/stalker/weapons/draw/fnf2000_draw.ogg'
 	mag_insert_sound = 'sound/stalker/weapons/load/fnf2000_load.ogg'
 	mag_remove_sound = 'sound/stalker/weapons/unload/fnf2000_open.ogg'
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+	list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=4, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 1.6, 2.4, 2.4)),
+	list(mode_name="short bursts",   burst=5, fire_delay=null, one_hand_penalty=5, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.6, 1.6, 2.0, 2.0, 2.4)),
+	list(mode_name="full auto",      burst=1, fire_delay=0,    burst_delay=1,      one_hand_penalty=5,                 burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.2, 1.2, 1.6, 1.6, 2.0), autofire_enabled = TRUE)
+	)
 
 
 
@@ -545,6 +658,12 @@
 	allowed_magazines = /obj/item/ammo_magazine/stalker/pkm
 	ammo_type = /obj/item/projectile/bullet/bullet762x54
 	bulk = GUN_BULK_RIFLE
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+	wielded_icon = 'ND/icons/event/left1.dmi',
+	wielded_item_state = "m60-wielded"
+	)
 	fire_sound = 'sound/stalker/weapons/pkm_shot.ogg'
 	can_suppress = 0
 	can_scope = 0
@@ -552,6 +671,9 @@
 	//recoil = 1
 	//damagelose = 0.25
 	//durability= 500
+	firemodes = list(
+	list(mode_name="full auto",      burst=1, fire_delay=0,    burst_delay=1,      one_hand_penalty=5,                 burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.2, 1.2, 1.6, 1.6, 2.0), autofire_enabled = TRUE)
+	)
 
 ///////////////////////////// Снайперские винтовки //////////////////////////////////////////
 /obj/item/gun/projectile/next_day/vsv
@@ -568,8 +690,17 @@
 	load_method = MAGAZINE
 	caliber = "9x39"
 	suppressed = 1
+	silenced = 1
 	can_suppress = 0
 	can_unsuppress = 0
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+	slot_back_str = 'ND/icons/obj/back.dmi',
+	back_item_state = "vintorez-silenced",
+	wielded_icon = 'ND/icons/obj/guns_lefthand.dmi',
+	wielded_item_state = "val"
+	)
 	//durability= 150
 	slot_flags = SLOT_BACK
 	force = 15
@@ -582,6 +713,10 @@
 	//draw_sound = 'sound/stalker/weapons/draw/val_draw.ogg'
 	mag_insert_sound = 'sound/stalker/weapons/load/val_load.ogg'
 	mag_remove_sound = 'sound/stalker/weapons/unload/val_open.ogg'
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+	list(mode_name="full auto",      burst=1, fire_delay=0,    burst_delay=1,      one_hand_penalty=5,                 burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.2, 1.2, 1.6, 1.6, 2.0), autofire_enabled = TRUE)
+	)
 
 /obj/item/gun/projectile/next_day/svd
 	name = "SVD"
@@ -599,6 +734,18 @@
 	suppressed = 0
 	can_suppress = 0
 	can_unsuppress = 0
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+	slot_back_str = 'ND/icons/obj/back.dmi',
+	back_item_state = "enfield",
+	wielded_icon_str = 'ND/icons/obj/left_gun_es.dmi',
+	wielded_item_state = "svd-wielded"
+	)
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+
+	)
 	//durability= 150
 	slot_flags = SLOT_BACK
 	force = 15
@@ -620,6 +767,14 @@
 	icon_state = "scar"
 	item_state = "scar"
 	load_method = MAGAZINE
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+	slot_back_str = 'ND/icons/obj/back.dmi',
+	back_item_state = "tpc301",
+	wielded_icon = 'ND/icons/obj/guns_lefthand.dmi',
+	wielded_item_state = "scar"
+	)
 	caliber = "7.62x51mm"
 	slot_flags = SLOT_BACK//|SLOT_BELT
 	force = 10
@@ -636,6 +791,10 @@
 	//draw_sound = 'sound/stalker/weapons/draw/l85_draw.ogg'
 	mag_remove_sound = 'sound/stalker/weapons/unload/scar_open.ogg'
 	mag_insert_sound = 'sound/stalker/weapons/load/scar_load.ogg'
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+	list(mode_name="full auto",      burst=1, fire_delay=0,    burst_delay=1,      one_hand_penalty=5,                 burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.2, 1.2, 1.6, 1.6, 2.0), autofire_enabled = TRUE)
+	)
 
 /obj/item/gun/projectile/next_day/sks
 	name = "SKS"
@@ -650,7 +809,12 @@
 	ammo_type = /obj/item/projectile/bullet/bullet762x51
 	can_suppress = 1
 	can_unsuppress = 1
-	slot_flags = SLOT_BACK
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+	wielded_icon = 'ND/icons/obj/left_gun_es.dmi',
+	wielded_item_state = "sks"
+	)
 	load_method = MAGAZINE
 	caliber = "7.62x51mm"
 	force = 15
@@ -663,6 +827,9 @@
 	//draw_sound = 'sound/stalker/weapons/draw/val_draw.ogg'
 	mag_insert_sound = 'sound/stalker/weapons/load/val_load.ogg'
 	mag_remove_sound = 'sound/stalker/weapons/unload/val_open.ogg'
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+	)
 
 /obj/item/gun/projectile/next_day/ak12
 	name = "AK12"
@@ -677,6 +844,14 @@
 	ammo_type = list (/obj/item/projectile/bullet/bullet545, /obj/item/projectile/bullet/bullet545AP)
 	load_method = MAGAZINE
 	can_suppress = 0
+	item_icons = list(
+	slot_r_hand_str = 'ND/icons/obj/guns_righthand.dmi',
+	slot_l_hand_str = 'ND/icons/obj/guns_lefthand.dmi',
+	slot_back_str = 'ND/icons/obj/back.dmi',
+	back_item_state = "ak74m",
+	wielded_icon = 'ND/icons/obj/left_gun_es.dmi',
+	wielded_item_state = "ak12"
+	)
 	slot_flags = SLOT_BELT
 	load_method = MAGAZINE
 	caliber = "5.45x39"
@@ -690,3 +865,8 @@
 	//draw_sound = 'sound/stalker/weapons/draw/ak12_draw.ogg'
 	mag_insert_sound = 'sound/stalker/weapons/load/ak12_load.ogg'
 	mag_remove_sound = 'sound/stalker/weapons/unload/ak12_unload.ogg'
+	firemodes = list(
+	list(mode_name="semi auto",      burst=1, fire_delay=null, one_hand_penalty=3, burst_accuracy=null, dispersion=null),
+	list(mode_name="3-round bursts", burst=3, fire_delay=null, one_hand_penalty=4, burst_accuracy=list(0,-1,-1),       dispersion=list(0.0, 1.6, 2.4, 2.4)),
+	list(mode_name="full auto",      burst=1, fire_delay=0,    burst_delay=1,      one_hand_penalty=5,                 burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(1.2, 1.2, 1.6, 1.6, 2.0), autofire_enabled = TRUE)
+	)

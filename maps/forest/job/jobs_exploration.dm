@@ -1,5 +1,5 @@
 /datum/job/exploration_leader
-	title = "Exploration Leader"
+	title = "Kshatrii Leader"
 	department = "Экспедиционный"
 	department_flag = EXP
 
@@ -41,7 +41,7 @@
 	аномалии... Но не это ли то, за что Корпорация платит вам почти столько же, сколько главе?"
 
 /datum/job/explorer
-	title = "Explorer"
+	title = "Stalker"
 	department = "Экспедиционный"
 	department_flag = EXP
 	total_positions = 3
@@ -80,7 +80,7 @@
 
 
 /datum/job/explorer_medic
-	title = "Field Medic"
+	title = "Stalker Medic"
 	department = "Экспедиционный"
 	department_flag = EXP
 	total_positions = 1
@@ -125,7 +125,7 @@
 	вам так хорошо платит?"
 
 /datum/job/explorer_engineer
-	title = "Field Engineer"
+	title = "Stalker Engineer"
 	department = "Экспедиционный"
 	department_flag = EXP
 	total_positions = 1

@@ -140,3 +140,5 @@
 	projectile_type = /obj/item/projectile/bullet/bullet762x51
 	icon = 'ND/icons/obj/ammo2.dmi'
 	icon_state = "303-casing-live"
+
+

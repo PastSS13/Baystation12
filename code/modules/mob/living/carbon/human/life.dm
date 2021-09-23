@@ -101,7 +101,7 @@
 	if(stat == DEAD)
 		stamina = 0
 	else
-		stamina = Clamp(stamina + amt, 0, 100)
+		stamina = Clamp(stamina + amt, 0, 50)
 		if(stamina <= 0)
 			to_chat(src, SPAN_WARNING("You are exhausted!"))
 			if(MOVING_QUICKLY(src))
@@ -747,6 +747,7 @@
 			else
 				// Generate a by-limb health display.
 				healths.icon_state = "blank"
+
 
 
 				var/no_damage = 1

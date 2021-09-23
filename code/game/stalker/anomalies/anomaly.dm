@@ -330,11 +330,13 @@
 	var/stage = 0
 	var/radius = 3
 	var/list/turf/traectory = null
+	var/req_range = 3
+
 
 /obj/anomaly/jarka/comet/New()
 	..()
 	SSobj.processing.Add(src)
-
+	loc.set_light(0.4, 1, req_range, l_color = LIGHT_COLOR_FIRE)
 
 /obj/anomaly/jarka/comet/Destroy()
 	..()

@@ -451,3 +451,74 @@
 	desc = "Pukish armor."
 	icon_state = "tdgreen"
 	siemens_coefficient = 1
+
+
+
+/obj/item/clothing/suit/armor/berill_5m
+	name = "Бронежилет солдата"
+	desc = "Местный военный бронежилет, который сняли с трупа."
+	icon = 'icons/stalker/outfits_2.0.dmi'
+	icon_state = "berill_5m"
+	item_state = "berill_5m.mob"
+	item_icons = list(slot_wear_suit_str = 'icons/stalker/outfits_2.0.dmi')
+	allowed = list(/obj/item/gun/energy,/obj/item/device/radio,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/handcuffs,/obj/item/gun/magnetic,/obj/item/clothing/head/helmet,/obj/item/device/flashlight)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	flags_inv = CLOTHING_BULKY
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
+	flags_inv = HIDEJUMPSUIT
+	armor = list(
+		melee = 30,
+		bullet = 60,
+		laser = 10,
+		energy = 20,
+		rad = 60 //INF was RESISTANT
+		)
+
+
+/obj/item/clothing/suit/armor/past
+	name = "Бронежилет Вождя"
+	desc = "Бронежилет неизвестной модели, может принадлежать лишь единственному."
+	icon = 'icons/stalker/outfits_2.0.dmi'
+	icon_state = "past"
+	item_state = "past.mob"
+	item_icons = list(slot_wear_suit_str = 'icons/stalker/outfits_2.0.dmi')
+	allowed = list(/obj/item/gun/energy,/obj/item/device/radio,/obj/item/reagent_containers/spray/pepper,/obj/item/gun/projectile,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/handcuffs,/obj/item/gun/magnetic,/obj/item/clothing/head/helmet,/obj/item/device/flashlight)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	flags_inv = CLOTHING_BULKY
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	min_cold_protection_temperature = ARMOR_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECTION_TEMPERATURE
+	flags_inv = HIDEJUMPSUIT
+	armor = list(
+		melee = 30,
+		bullet = 60,
+		laser = 10,
+		energy = 20,
+		rad = 60 //INF was RESISTANT
+		)
+
+/obj/item/clothing/suit/armor/bombsuit
+	icon = 'icons/stalker/d2k5/mob/suit.dmi'
+	icon_state = "rad1"
+	item_state = "bombsuit"
+	item_icons = list(slot_wear_suit_str = 'icons/stalker/d2k5/mob/suit.dmi')
+	armor = list(
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_MINOR,
+		laser = ARMOR_LASER_SMALL,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = 60,
+		rad = ARMOR_RAD_SHIELDED
+		)
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO| ARMS | HEAD| HANDS| LEGS| FEET
+
+/obj/item/clothing/suit/armor/bombsuit/New()
+	..()
+	slowdown_per_slot[slot_wear_suit] = 2
+

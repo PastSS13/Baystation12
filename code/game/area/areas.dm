@@ -8,8 +8,8 @@
 	var/uid
 	var/blowout = 0
 	var/area_flags
-	var/ambient_music_cooldown				= 3000
-	var/ambient_environment_cooldown		= 3000
+	var/ambient_music_cooldown				= 1000
+	var/ambient_environment_cooldown		= 1000
 	var/list/ambient_background_cooldown = null
 	var/list/ambient_music = list(	'sound/stalker/ambience/amb01.ogg','sound/stalker/ambience/amb02.ogg',
 									'sound/stalker/ambience/amb03.ogg','sound/stalker/ambience/amb04.ogg',
@@ -296,12 +296,12 @@ inf*/
 	if(L.lastarea != src)
 		if(LAZYLEN(forced_ambience))
 			forced_ambiance_list |= L
-			L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 25, channel = GLOB.forced_ambience_sound_channel)) //inf //was: L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 25, channel = GLOB.lobby_sound_channel))
+			L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 60, channel = GLOB.forced_ambience_sound_channel)) //inf //was: L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 25, channel = GLOB.lobby_sound_channel))
 		else	//stop any old area's forced ambience, and try to play our non-forced ones
 			sound_to(L, sound(null, channel = GLOB.forced_ambience_sound_channel)) //inf //was: sound_to(L, sound(null, channel = GLOB.lobby_sound_channel))
 			forced_ambiance_list -= L
 	if(ambience.len && prob(config.ambience_probability) && (world.time >= L.client.played + config.ambience_delay))//inf, was: if(ambience.len && prob(5) && (world.time >= L.client.played + 3 MINUTES))
-		L.playsound_local(T, sound(pick(ambience), repeat = 0, wait = 0, volume = 15, channel = GLOB.ambience_sound_channel)) //inf //was: L.playsound_local(T, sound(pick(ambience), repeat = 0, wait = 0, volume = 15, channel = GLOB.lobby_sound_channel))
+		L.playsound_local(T, sound(pick(ambience), repeat = 0, wait = 0, volume = 50, channel = GLOB.ambience_sound_channel)) //inf //was: L.playsound_local(T, sound(pick(ambience), repeat = 0, wait = 0, volume = 15, channel = GLOB.lobby_sound_channel))
 		L.client.played = world.time
 //[INF]
 	var/hum = 0
@@ -330,7 +330,7 @@ inf*/
 									'sound/stalker/ambience/amb32.ogg','sound/stalker/ambience/amb33.ogg',
 									'sound/stalker/ambience/amb34.ogg','sound/stalker/ambience/amb35.ogg',
 									'sound/stalker/ambience/amb36.ogg','sound/stalker/ambience/amb37.ogg',
-									'sound/stalker/ambience/amb38.ogg', repeat = 1, wait = 0, volume = 10, channel = GLOB.environment_sound_channel))
+									'sound/stalker/ambience/amb38.ogg', repeat = 1, wait = 0, volume = 60, channel = GLOB.environment_sound_channel))
 	else
 		if(L.client.ambience_playing)
 			L.client.ambience_playing = 0

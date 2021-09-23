@@ -7,11 +7,11 @@
 
 	load_legacy_saves = TRUE
 
-	station_levels = list(1,2)
+	station_levels = list(1,2,3)
 	admin_levels = list(4,5)
 	empty_levels = list(6)
-	accessible_z_levels = list("1"=1,"2"=1,"6"=30)
-	player_levels = list(1,2)
+	accessible_z_levels = list("1"=1,"2"=1,"3"=1,"6"=30)
+	player_levels = list(1,2,3)
 	contact_levels = list(1,2)
 	usable_email_tlds = list("freemail.net")
 

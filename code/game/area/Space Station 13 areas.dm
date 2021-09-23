@@ -72,7 +72,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 									'sound/stalker/ambience/amb32.ogg','sound/stalker/ambience/amb33.ogg',
 									'sound/stalker/ambience/amb34.ogg','sound/stalker/ambience/amb35.ogg',
 									'sound/stalker/ambience/amb36.ogg','sound/stalker/ambience/amb37.ogg',
-									'sound/stalker/ambience/amb38.ogg')
+									'sound/stalker/ambience/amb38.ogg'
+								)
 
 	var/list/forced_ambience = null
 	var/sound_env = STANDARD_STATION

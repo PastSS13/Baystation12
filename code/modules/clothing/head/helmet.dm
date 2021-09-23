@@ -248,3 +248,25 @@
 	flags_inv = BLOCKHAIR
 	body_parts_covered = 0
 	siemens_coefficient = 0.9
+
+/obj/item/clothing/head/helmet/sphera
+	name = "Шлем-маска Сфера"
+	desc = "Солдатская экипировка, вероятно снята с трупа военного или украдена со склада"
+	icon = 'ND/icons/obj//outfits.dmi'
+	icon_state = "sphera"
+	item_state = "sphera.mob"
+	slot_flags = SLOT_HEAD|SLOT_BACK
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	body_parts_covered = HEAD
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL,
+		laser = ARMOR_LASER_HANDGUNS,
+		energy = ARMOR_ENERGY_SMALL,
+		bomb = ARMOR_BOMB_PADDED
+		)
+	flags_inv = HIDEEARS|BLOCKHEADHAIR
+	cold_protection = HEAD
+	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
+	heat_protection = HEAD
+	max_heat_protection_temperature = HELMET_MAX_HEAT_PROTECTION_TEMPERATURE

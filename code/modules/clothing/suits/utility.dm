@@ -147,3 +147,24 @@
 /obj/item/clothing/suit/radiation/New()
 	..()
 	slowdown_per_slot[slot_shoes] = 1.5
+
+
+/obj/item/clothing/suit/bomb_suit/bombsuit
+	icon = 'icons/stalker/d2k5/mob/suit.dmi'
+	icon_state = "rad1"
+	item_state = "bombsuit"
+	armor = list(
+		melee = ARMOR_MELEE_VERY_HIGH,
+		bullet = ARMOR_BALLISTIC_MINOR,
+		laser = ARMOR_LASER_SMALL,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = 60,
+		rad = ARMOR_RAD_SHIELDED
+		)
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO| ARMS | HEAD| HANDS| LEGS| FEET
+
+/obj/item/clothing/suit/bomb_suit/rad/New()
+	..()
+	slowdown_per_slot[slot_wear_suit] = 2
+
+
