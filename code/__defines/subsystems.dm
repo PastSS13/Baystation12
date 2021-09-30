@@ -56,6 +56,7 @@ return;\
 #define SS_INIT_ALARM           -4
 #define SS_INIT_SHUTTLE         -5
 #define SS_INIT_GOALS           -5
+
 #define SS_INIT_LIGHTING        -6
 #define SS_INIT_ZCOPY           -7
 
@@ -68,6 +69,7 @@ return;\
 #define SS_INIT_AIFAST          -22
 #define SS_INIT_CHAT            -90 // Should be lower to ensure chat remains smooth during init.
 #define SS_INIT_UNIT_TESTS      -100
+#define INIT_ORDER_PLANETS		-250
 
 // SS runlevels
 

@@ -252,7 +252,8 @@
 /obj/item/clothing/head/helmet/sphera
 	name = "Шлем-маска Сфера"
 	desc = "Солдатская экипировка, вероятно снята с трупа военного или украдена со склада"
-	icon = 'ND/icons/obj//outfits.dmi'
+	icon = 'icons/stalker/outfits_2.0.dmi'
+	icon_override = 'icons/stalker/outfits_2.0.dmi'
 	icon_state = "sphera"
 	item_state = "sphera.mob"
 	slot_flags = SLOT_HEAD|SLOT_BACK
@@ -265,8 +266,11 @@
 		energy = ARMOR_ENERGY_SMALL,
 		bomb = ARMOR_BOMB_PADDED
 		)
+	w_class = ITEM_SIZE_NORMAL
+	siemens_coefficient = 0.7
 	flags_inv = HIDEEARS|BLOCKHEADHAIR
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	heat_protection = HEAD
 	max_heat_protection_temperature = HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
+

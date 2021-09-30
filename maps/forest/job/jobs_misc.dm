@@ -18,6 +18,7 @@
 		"Off-Duty",
 		"Trainer"
 		)
+	skill_points = 12
 	outfit_type = /decl/hierarchy/outfit/job/sierra/passenger/passenger
 	allowed_branches = list(/datum/mil_branch/employee, /datum/mil_branch/contractor, /datum/mil_branch/civilian)
 	allowed_ranks = list(
@@ -88,12 +89,18 @@
 	create_record = 0
 	latejoin_at_spawnpoints = 1
 	account_allowed = 0
+	skill_points = 25
 	alt_titles = list(
         "Bandit",
         )
+
+
 	allowed_branches = list(/datum/mil_branch/civilian)
 	allowed_ranks = list(/datum/mil_rank/civ/civ)
 	announced = FALSE
+	max_skill = list(SKILL_COMBAT      = SKILL_MAX,
+	                 SKILL_WEAPONS     = SKILL_MAX,
+	                 SKILL_FORENSICS   = SKILL_MAX)
 
 
 	access = list(access_maint_tunnels, access_emergency_storage)

@@ -9,7 +9,7 @@ var/datum/planet/sif/planet_sif = null
 	breathable atmosphere, a magnetic field, weather, and similar gravity to Earth. It is currently the capital planet of Vir. \
 	Its center of government is the equatorial city and site of first settlement, New Reykjavik." // Ripped straight from the wiki.
 	current_time = new /datum/time/sif() // 32 hour clocks are nice.
-	expected_z_levels = list(1) // To be changed when real map is finished.
+	expected_z_levels = list(1,2,3,4) // To be changed when real map is finished.
 
 
 /datum/planet/sif/New()
@@ -36,34 +36,34 @@ var/datum/planet/sif/planet_sif = null
 
 	switch(sun_position)
 		if(0 to 0.40) // Night
-			low_brightness = 0.2
+			low_brightness = 0.1
 			low_color = "#070733"
 
-			high_brightness = 0.5
+			high_brightness = 0.3
 			high_color = "#191956"
 			min = 0
 
 		if(0.40 to 0.50) // Twilight
-			low_brightness = 0.6
+			low_brightness = 0.4
 			low_color = "#28284f"
 
-			high_brightness = 0.8
+			high_brightness = 0.5
 			high_color = "#545484"
 			min = 0.40
 
 		if(0.50 to 0.70) // Sunrise/set
-			low_brightness = 0.8
+			low_brightness = 0.6
 			low_color = "#7c7868"
 
-			high_brightness = 0.9
+			high_brightness = 0.7
 			high_color = "#b5865e"
 			min = 0.50
 
 		if(0.70 to 1.00) // Noon
-			low_brightness = 0.9
+			low_brightness = 0.8
 			low_color = "#ccc5c5"
 
-			high_brightness = 1.0
+			high_brightness = 0.9
 			high_color = "#d3cfcf"
 			min = 0.70
 
@@ -116,16 +116,17 @@ var/datum/planet/sif/planet_sif = null
 		WEATHER_SNOW		= new /datum/weather/sif/snow(),
 		WEATHER_BLIZZARD	= new /datum/weather/sif/blizzard(),
 		WEATHER_RAIN		= new /datum/weather/sif/rain(),
+		WEATHER_ASH			=new /datum/weather/sif/ash(),
 		WEATHER_STORM		= new /datum/weather/sif/storm(),
 		WEATHER_HAIL		= new /datum/weather/sif/hail(),
 		WEATHER_BLOOD_MOON	= new /datum/weather/sif/blood_moon()
 		)
 	roundstart_weather_chances = list(
-		WEATHER_CLEAR		= 50,
-		WEATHER_OVERCAST	= 50
+//		WEATHER_CLEAR		= 50,
+//		WEATHER_OVERCAST	= 50
 //		WEATHER_LIGHT_SNOW	= 20,
 //		WEATHER_SNOW		= 5,
-//		WEATHER_BLIZZARD	= 5,
+		WEATHER_BLIZZARD	= 100,
 //		WEATHER_RAIN		= 5,
 //		WEATHER_STORM		= 2.5,
 //		WEATHER_HAIL		= 2.5
@@ -133,8 +134,8 @@ var/datum/planet/sif/planet_sif = null
 
 datum/weather/sif
 	name = "sif base"
-	temp_high = 283.15	// 10c
-	temp_low = 263.15	// -10c
+	temp_high = 260.15	// 10c
+	temp_low = 245.15	// -10c
 
 /datum/weather/sif/clear
 	name = "clear"
@@ -145,7 +146,7 @@ datum/weather/sif
 
 /datum/weather/sif/overcast
 	name = "overcast"
-	light_modifier = 0.8
+	light_modifier = 0.1
 	transition_chances = list(
 		WEATHER_CLEAR = 50,
 		WEATHER_OVERCAST = 50
@@ -153,14 +154,15 @@ datum/weather/sif
 //		WEATHER_SNOW = 5,
 //		WEATHER_RAIN = 5,
 //		WEATHER_HAIL = 5
+
 		)
 
 /datum/weather/sif/light_snow
 	name = "light snow"
 	icon_state = "snowfall_light"
-	temp_high = T0C		// 0c
+	temp_high = 260		// 0c
 	temp_low = 	258.15	// -15c
-	light_modifier = 0.7
+	light_modifier = 0.1
 	transition_chances = list(
 		WEATHER_OVERCAST = 20,
 		WEATHER_LIGHT_SNOW = 50,
@@ -171,9 +173,24 @@ datum/weather/sif
 /datum/weather/sif/snow
 	name = "moderate snow"
 	icon_state = "snowfall_med"
-	temp_high = T0C		// 0c
+	temp_high = 250		// 0c
 	temp_low = 243.15	// -30c
-	light_modifier = 0.5
+	light_modifier = 0.1
+	flight_failure_modifier = 5
+	transition_chances = list(
+		WEATHER_LIGHT_SNOW = 20,
+		WEATHER_SNOW = 50,
+		WEATHER_BLIZZARD = 20,
+		WEATHER_HAIL = 5,
+		WEATHER_OVERCAST = 5
+		)
+
+/datum/weather/sif/ash
+	name = "light ash"
+	icon_state = "light_ash"
+	temp_high = 260	// 0c
+	temp_low = 243.15	// -30c
+	light_modifier = 0.1
 	flight_failure_modifier = 5
 	transition_chances = list(
 		WEATHER_LIGHT_SNOW = 20,
@@ -198,7 +215,7 @@ datum/weather/sif
 	icon_state = "snowfall_heavy"
 	temp_high = 243.15 // -30c
 	temp_low = 233.15  // -40c
-	light_modifier = 0.3
+	light_modifier = 0.1
 	flight_failure_modifier = 10
 	transition_chances = list(
 		WEATHER_SNOW = 45,
@@ -220,7 +237,7 @@ datum/weather/sif
 /datum/weather/sif/rain
 	name = "rain"
 	icon_state = "rain"
-	light_modifier = 0.5
+	light_modifier = 0.1
 	effect_message = "<span class='warning'>Rain falls on you.</span>"
 
 	transition_chances = list(
@@ -262,9 +279,9 @@ datum/weather/sif
 	icon_state = "storm"
 	temp_high = 243.15 // -30c
 	temp_low = 233.15  // -40c
-	light_modifier = 0.3
+	light_modifier = 0.1
 	flight_failure_modifier = 10
-	var/next_lightning_strike = 0 // world.time when lightning will strike.
+	var/next_lightning_strike = 1 // world.time when lightning will strike.
 	var/min_lightning_cooldown = 5 SECONDS
 	var/max_lightning_cooldown = 1 MINUTE
 
@@ -311,13 +328,15 @@ datum/weather/sif
 	next_lightning_strike = world.time + rand(min_lightning_cooldown, max_lightning_cooldown)
 	var/turf/T = pick(holder.our_planet.planet_floors) // This has the chance to 'strike' the sky, but that might be a good thing, to scare reckless pilots.
 	lightning_strike(T)
+// This has the chance to 'strike' the sky, but that might be a good thing, to scare reckless pilots.
+
 
 /datum/weather/sif/hail
 	name = "hail"
 	icon_state = "hail"
-	temp_high = T0C		// 0c
+	temp_high = 250		// 0c
 	temp_low = 243.15	// -30c
-	light_modifier = 0.3
+	light_modifier = 0.1
 	flight_failure_modifier = 15
 	timer_low_bound = 2
 	timer_high_bound = 5
@@ -369,7 +388,7 @@ datum/weather/sif
 */
 /datum/weather/sif/blood_moon
 	name = "blood moon"
-	light_modifier = 0.5
+	light_modifier = 0.1
 	light_color = "#FF0000"
 	flight_failure_modifier = 25
 	transition_chances = list(

@@ -55,6 +55,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 //	var/list/lights				// list of all lights on this area
 	var/list/all_doors = null		//Added by Strumpetplaya - Alarm Change - Contains a list of doors adjacent to this area
 	var/air_doors_activated = 0
+	var/ambience_cooldown = 1000
 	var/list/ambience = list('sound/stalker/ambience/amb01.ogg','sound/stalker/ambience/amb02.ogg',
 									'sound/stalker/ambience/amb03.ogg','sound/stalker/ambience/amb04.ogg',
 									'sound/stalker/ambience/amb05.ogg','sound/stalker/ambience/amb06.ogg',

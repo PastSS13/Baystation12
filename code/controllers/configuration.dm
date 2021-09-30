@@ -184,8 +184,7 @@ var/list/gamemode_cache = list()
 	var/dsay_allowed = 1
 	var/aooc_allowed = 1
 	var/ahelp_allowed = 1
-
-	var/starlight = 0	// Whether space turfs have ambient light or not
+	// Whether space turfs have ambient light or not
 
 	var/list/ert_species = list(SPECIES_HUMAN)
 
@@ -215,6 +214,10 @@ var/list/gamemode_cache = list()
 	var/max_gear_cost = 15 // Used in chargen for accessory loadout limit. 0 disables loadout, negative allows infinite points.
 
 	var/allow_ic_printing = TRUE //Whether players should be allowed to print IC circuits from scripts.
+
+	var/starlight = 1	// Whether space turfs have ambient light or not
+
+
 
 	var/allow_unsafe_narrates = FALSE //Whether admins can use unsanitized narration; when true, allows HTML etc.
 

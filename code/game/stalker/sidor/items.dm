@@ -8,13 +8,13 @@
 
 /sidoritem/ak74
     name = "Akm74/2"
-    itemtype = /obj/item/weapon/gun/projectile/automatic/ak74
+    itemtype = /obj/item/gun/projectile/next_day/ak74
     cost = 14000
     words = list("Калаш" = 5, "калаш" = 5, "ак74" = 5, "ak74" = 5, "автомат" = 5, " Автомат" = 5, "Калашникова" = 5, "Калашников" = 5, "калашникова" = 5, "Калашникова" = 10)
 
 /sidoritem/aksu74
     name = "Akm74/2y"
-    itemtype = /obj/item/weapon/gun/projectile/automatic/aksu74
+    itemtype = /obj/item/gun/projectile/next_day/aksu74
     cost = 17000
     words = list("укороченный" = 5, "Укороченный" = 5, "Калаш" = 5, "калаш" = 5, "ак74" = 5, "ak74" = 5, "автомат" = 5, " Автомат" = 5, "Калашникова" = 5, "Калашников" = 5, "калашникова" = 5, "Калашникова" = 10)
 
@@ -22,19 +22,19 @@
 
 /sidoritem/vintorez
     name = "Vintar VS"
-    itemtype = /obj/item/weapon/gun/projectile/automatic/svd
+    itemtype = /obj/item/gun/projectile/next_day/svd
     cost = 27000
     words = list("винторез" = 5, "винтарь" = 5, "vintar" = 10)
 
 /sidoritem/val
     name = "Specgun VLA"
-    itemtype = /obj/item/weapon/gun/projectile/automatic/vsv
+    itemtype = /obj/item/gun/projectile/next_day/vsv
     cost = 23000
     words = list("вал" = 5, "спецавтомат вал" = 5, "вла" = 5, "спецавтомат вла" = 5, "specgun vla" = 5, "vla" = 5, "Вал" = 5, "Вла" = 10)
 
 //Дробовики
 
-/sidoritem/bm16
+/*/sidoritem/bm16
     name = "Doublebarrel"
     itemtype = /obj/item/weapon/gun/projectile/revolver/bm16
     cost = 12000
@@ -45,47 +45,47 @@
     itemtype = /obj/item/weapon/gun/projectile/revolver/bm16/toz34
     cost = 15000
     words = list("тост" = 5, "Тост" = 5, "34" = 10)
-
+*/
 //Пистолеты
 
 /sidoritem/pm
     name = "PM"
-    itemtype = /obj/item/weapon/gun/projectile/automatic/pistol/pm
+    itemtype = /obj/item/gun/projectile/pistol/next_day/pm
     cost = 2500
     words = list("пм" = 5, "ПМ" = 5, "пистолет Макарова" = 5, "Пистолет Макарова" = 5, "пистолет макарова" = 10)
 
-/sidoritem/cora
+/*/sidoritem/cora
     name = "Cora 919"
-    itemtype = /obj/item/weapon/gun/projectile/automatic/pistol/cora
+    itemtype = /obj/item/gun/projectile/pistol/next_day/cora
     cost = 8000
     words = list("Кора" = 5, "кора" = 5, "Кору" = 5, "кору" = 5, "Кора 919" = 5, "кора 919" = 5, "Кору 919" = 5, "кору 919" = 10)
 
 /sidoritem/marta
     name = "Marta"
-    itemtype = /obj/item/weapon/gun/projectile/automatic/pistol/marta
+    itemtype = /obj/item/gun/projectile/pistol/next_day/marta
     cost = 10000
     words = list("Марта" = 5, "марта" = 5, "Марту" = 5, "марту" = 10)
-
+*/
 /sidoritem/fort12
 	name = "Fora-12 Mk2"
-	itemtype = /obj/item/weapon/gun/projectile/automatic/pistol/fort12
+	itemtype = /obj/item/gun/projectile/pistol/next_day/fort12
 	cost = 5000
 	words = list("Фору" = 5, "фору" = 5, "Фору 12" = 5, "фору 12" = 5, "Фору12" = 5, "фору12" = 5, "12 Мк2" = 5, "12 МК2" = 5, "12Мк2" = 5, "12МК2" = 10)
 
 /sidoritem/pb1s
 	name = "PB1s"
-	itemtype = /obj/item/weapon/gun/projectile/automatic/pistol/pb1s
+	itemtype = /obj/item/gun/projectile/pistol/next_day/pb1s
 	cost = 4000
 	words = list("ПБ1с" = 5, "пб1с" = 5, "Пб1с" = 5, "ПБ1С" = 5, "пБ1с" = 5, "пб1С" = 10)
 
 /sidoritem/usp_match
 	name = "Usip"
-	itemtype = /obj/item/weapon/gun/projectile/automatic/pistol/usp_match
+	itemtype = /obj/item/gun/projectile/pistol/next_day/usp_match
 	cost = 9000
 	words = list("Юсп" = 5, "юсп" = 5, "Юсип" = 5, "юсип" = 10)
 
 //Шлемы
-
+/*
 /sidoritem/gasmask
 	name = "Gasmask"
 	itemtype = /obj/item/clothing/mask/gas/stalker
@@ -518,3 +518,4 @@
 	itemtype = /obj/item/weapon/storage/fancy/cigarettes/cigars
 	cost = 5000
 	words = list("Сигары" = 5, "сигары" = 5, "Сигар" = 5, "сигар" = 5)
+*/

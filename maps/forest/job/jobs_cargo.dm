@@ -1,10 +1,10 @@
 /datum/job/qm
-	title = "Quartermaster"
+	title = "Trader"
 	department = "Снабжения"
 	department_flag = SUP
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Главе Персонала"
+	supervisors = "Тёмной руке рынка"
 	economic_power = 8
 	minimal_player_age = 7
 	ideal_character_age = 35
@@ -15,6 +15,10 @@
 	                    SKILL_FINANCE     = SKILL_BASIC,
 	                    SKILL_HAULING     = SKILL_BASIC,
 	                    SKILL_EVA         = SKILL_BASIC)
+
+	max_skill = list(   SKILL_COMBAT      = SKILL_ADEPT,
+	                    SKILL_WEAPONS     = SKILL_BASIC,
+	                    SKILL_FORENSICS   = SKILL_ADEPT)
 
 	skill_points = 14
 
@@ -33,11 +37,11 @@
 	Он следит за правильным оформлением бланков заказов и за тем, чтобы карготехник своевременно принимал и отправлял заказы."
 
 /datum/job/cargo_tech
-	title = "Cargo Technician"
+	title = "Trade helper"
 	department = "Снабжения"
 	department_flag = SUP
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "Квартирмейстеру и Главе Персонала"
 	ideal_character_age = 24
 	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/supply/tech
@@ -55,6 +59,7 @@
 	software_on_spawn = list(/datum/computer_file/program/supply,
 							 /datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/reports)
+	required_role = list("Trader")
 
 /datum/job/cargo_tech/get_description_blurb()
 	return "Спустя долгого перетаскивания тяжёлых грузов из точки А в точку В Вы превратились из Ассистента Карго в настоящего Карготехника.\
@@ -66,8 +71,8 @@
 	title = "Prospector"
 	department = "Снабжения"
 	department_flag = SUP
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "Квартирмейстеру и Главе Персонала"
 	selection_color = "#515151"
 	economic_power = 7
@@ -99,8 +104,8 @@
 	title = "Cargo Assistant"
 	department = "Снабжения"
 	department_flag = SUP
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "Квартирмейстеру и Главе Персонала"
 	ideal_character_age = 20
 	selection_color = "#515151"

@@ -206,3 +206,4 @@
 		C = C.get_client()
 	if(C.holder && (C.holder.rights == R_XENO))
 		return TRUE
+

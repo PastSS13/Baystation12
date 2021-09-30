@@ -48,8 +48,8 @@
 	department = "Security"
 	department_flag = SEC
 	hud_icon = "huddetective"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the Head of Security"
 	economic_power = 5
 	minimal_player_age = 7

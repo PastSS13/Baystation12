@@ -63,7 +63,7 @@
 	var/icon_state = null // Icon to apply to turf undergoing weather.
 	var/temp_high = T20C
 	var/temp_low = T0C
-	var/light_modifier = 1.0 // Lower numbers means more darkness.
+	var/light_modifier = 0.1 // Lower numbers means more darkness.
 	var/light_color = null // If set, changes how the day/night light looks.
 	var/flight_failure_modifier = 0 // Some types of weather make flying harder, and therefore make crashes more likely.
 	var/transition_chances = list() // Assoc list
@@ -73,7 +73,7 @@
 
 	var/effect_message = null		// Should be a string, this is what is shown to a mob caught in the weather
 	var/last_message = 0			// Keeps track of when the weather last tells EVERY player it's hitting them
-	var/message_delay = 10 SECONDS	// Delay in between weather hit messages
+	var/message_delay = 30 SECONDS	// Delay in between weather hit messages
 	var/show_message = FALSE		// Is set to TRUE and plays the messsage every [message_delay]
 
 /datum/weather/proc/process_effects()
@@ -88,7 +88,7 @@
 /atom/movable/weather_visuals
 	icon = 'icons/effects/weather.dmi'
 	mouse_opacity = 0
-	plane = ABOVE_HUMAN_PLANE
+	plane = 5
 
 // This is for special effects for specific types of weather, such as lightning flashes in a storm.
 // It's a seperate object to allow the use of flick().

@@ -44,8 +44,8 @@
 	title = "Stalker"
 	department = "Экспедиционный"
 	department_flag = EXP
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "Лидеру Экспедиции и Директору Исследований"
 	selection_color = "#68099e"
 	minimal_player_age = 4

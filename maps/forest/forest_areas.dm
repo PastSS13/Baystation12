@@ -3,7 +3,9 @@
 	icon_state = "ai"
 	base_turf = /turf/simulated/floor/asteroid/aired
 	sound_env = LARGE_ENCLOSED
-
+	area_flags = AREA_FLAG_NO_MODIFY
+	environment = 1
+	base_turf = /turf/simulated/floor/asteroid/aired
 
 
 /area/forest/survivors_cave
@@ -12,17 +14,18 @@
 	sound_env = SMALL_ENCLOSED
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/forest/survivors_cave_med
+/area/forest/survivors_cave/med
 	name = "\improper Survivors Cave Medical"
 	icon_state = "bridge"
 	sound_env = SMALL_ENCLOSED
 	area_flags = AREA_FLAG_RAD_SHIELDED
 
-/area/forest/survivors_cave_cargo
+/area/forest/survivors_cave/cargo
 	name = "\improper Survivors Cave Cargo"
 	icon_state = "bridge"
 	sound_env = SMALL_ENCLOSED
 	area_flags = AREA_FLAG_RAD_SHIELDED
+	req_access = list(access_mailsorting, access_cargo)
 
 
 /area/forest/pod
@@ -112,7 +115,6 @@
 /area/forest/downground
 	name = "\improper downground"
 	icon_state = "security"
-	base_turf = /turf/simulated/floor/asteroid/aired
 
 /area/forest/downground2
 	name = "\improper research"
@@ -127,7 +129,7 @@
 /area/forest/war
 	name = "\improper war"
 	icon_state = "security"
-	base_turf = /turf/simulated/floor/asteroid/aired
+
 
 /area/forest/war_lake
 	name = "\improper war lake"
@@ -137,7 +139,6 @@
 /area/forest/city_ruins
 	name = "\improper city ruins"
 	icon_state = "medbay"
-	base_turf = /turf/simulated/floor/asteroid/aired
 	area_flags = AREA_FLAG_NO_MODIFY
 
 
@@ -155,6 +156,8 @@
 	req_access = null
 	requires_power = 0
 
+var/list/interior_areas = list (/area/forest/survivors_cave, /area/forest/teleporter, /area/forest/teleporter2, /area/forest/downground,/area/forest/downground2,
+/area/forest/Nexus, /area/forest/coms,/area/forest/old_houses_1,/area/forest/old_houses_2,/area/forest/complex)
 
 
 

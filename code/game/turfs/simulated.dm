@@ -1,3 +1,33 @@
+/turf/Initialize()
+	if(outdoors)
+		SSplanets.addTurf(src)
+	..()
+
+/turf/Destroy()
+	if(outdoors)
+		SSplanets.removeTurf(src)
+	return ..()
+
+/turf/proc/make_outdoors()
+	outdoors = TRUE
+	SSplanets.addTurf(src)
+
+/turf/proc/make_indoors()
+	outdoors = FALSE
+	SSplanets.removeTurf(src)
+
+/turf/post_change()
+	..()
+	// If it was outdoors and still is, it will not get added twice when the planet controller gets around to putting it in.
+	if(outdoors)
+		make_outdoors()
+	else
+		make_indoors()
+
+
+
+
+
 /turf/simulated
 	name = "station"
 	var/wet = 0

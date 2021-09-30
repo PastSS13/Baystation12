@@ -47,7 +47,7 @@
 	icon = 'icons/effects/landmarks.dmi'
 	icon_state = "x2"
 	req_range = 100
-	radiation_power = 80
+	radiation_power = 50
 
 /obj/effect/icarus_irradiate/mega/Initialize()
 	. = ..()

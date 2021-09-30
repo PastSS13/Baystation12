@@ -125,10 +125,10 @@
 /obj/sidor/proc/GetItemsOnTable()
 	var/list/ontable = list()
 	for(var/atom/movable/AM in itemloc)
-		if(GetCost(AM.type) || istype(AM, /obj/item/stack/spacecash))
+		if(GetCost(AM.type) || istype(AM, /obj/item/spacecash/bundle))
 			ontable.Add(AM)
 	for(var/atom/movable/AM in itemloc2)
-		if(GetCost(AM.type) || istype(AM, /obj/item/stack/spacecash))
+		if(GetCost(AM.type) || istype(AM, /obj/item/spacecash/bundle))
 			ontable.Add(AM)
 	return ontable
 
@@ -138,17 +138,17 @@
 	var/total_cost = 0
 
 	for(var/atom/item_on_table in ontable)
-		var/obj/item/stack/spacecash/C = item_on_table
+		var/obj/item/spacecash/bundle/C = item_on_table
 		switch(item_on_table.type)
-			if(/obj/item/stack/spacecash/c50)
+			if(/obj/item/spacecash/bundle/c50)
 				total_cost += 50 * C.amount
-			if(/obj/item/stack/spacecash/c100)
+			if(/obj/item/spacecash/bundle/c100)
 				total_cost += 100 * C.amount
-			if(/obj/item/stack/spacecash/c500)
+			if(/obj/item/spacecash/bundle/c500)
 				total_cost += 500 * C.amount
-			if(/obj/item/stack/spacecash/c1000)
+			if(/obj/item/spacecash/bundle/c1000)
 				total_cost += 1000 * C.amount
-			if(/obj/item/stack/spacecash/c5000)
+			if(/obj/item/spacecash/bundle/c5000)
 				total_cost += 5000 * C.amount
 		var/cost = GetCost(item_on_table.type, 1)
 		if(cost)
@@ -198,17 +198,17 @@
 	if(!amount)
 		return
 
-	var/obj/item/stack/spacecash/bill = null
+	var/obj/item/spacecash/bundle/bill = null
 	if(billtype == 5000)
-		bill =	new /obj/item/stack/spacecash/c5000(itemloc)
+		bill =	new /obj/item/spacecash/bundle/c5000(itemloc)
 	if(billtype == 1000)
-		bill =	new /obj/item/stack/spacecash/c1000(itemloc)
+		bill =	new /obj/item/spacecash/bundle/c1000(itemloc)
 	if(billtype == 500)
-		bill = new /obj/item/stack/spacecash/c500(itemloc)
+		bill = new /obj/item/spacecash/bundle/c500(itemloc)
 	if(billtype == 100)
-		bill = new /obj/item/stack/spacecash/c100(itemloc)
+		bill = new /obj/item/spacecash/bundle/c100(itemloc)
 	if(billtype == 50)
-		bill = new /obj/item/stack/spacecash/c50(itemloc)
+		bill = new /obj/item/spacecash/bundle/c50(itemloc)
 	bill.amount = amount
 
 /proc/RemoveFloat(number)
@@ -281,13 +281,10 @@ var/global/sidoritems = list(
         new /sidoritem/aksu74,
         new /sidoritem/vintorez,
         new /sidoritem/val,
-        new /sidoritem/bm16,
-        new /sidoritem/toz34,
         new /sidoritem/pm,
-        new /sidoritem/cora,
-        new /sidoritem/marta,
         new /sidoritem/fort12,
-        new /sidoritem/pb1s,
+        new /sidoritem/pb1s)
+        /*
         new /sidoritem/usp_match,
         new /sidoritem/gasmask,
         new /sidoritem/tacticalhelmet,
@@ -361,3 +358,4 @@ var/global/sidoritems = list(
         new /sidoritem/mathes,
         new /sidoritem/cigars,
         new /sidoritem/cigarsup)
+       */

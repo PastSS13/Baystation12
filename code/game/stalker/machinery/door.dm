@@ -1,6 +1,7 @@
 /obj/machinery/door/airlock/stalker
 	icon = 'icons/obj/doors/door_sidor.dmi'
-
+	open_sound_powered = 'sound/stalker/objects/door_closing.ogg'
+	close_sound_powered = 'sound/stalker/objects/door_closing.ogg'
 
 /obj/machinery/door/airlock/stalker/New()
 	..()
@@ -15,6 +16,7 @@
 	icon = 'icons/obj/doors/door_sidor.dmi'
 	icon_state = "closed"
  // Time in seconds to automatically close when opened, 0 if it doesn't
+
 
 /obj/machinery/door/poddoor/metro/woodd
 	name = "door"

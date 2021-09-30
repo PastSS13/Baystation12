@@ -3,8 +3,8 @@
 	department = "Научный"
 	department_flag = SCI
 
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "Директору Исследований"
 	selection_color = "#633d63"
 	economic_power = 12
@@ -52,8 +52,8 @@
 	title = "Scientist"
 	department = "Научный"
 	department_flag = SCI
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "Директору Исследований и Старшему Исследователю"
 	economic_power = 10
 	ideal_character_age = 45
@@ -107,8 +107,8 @@
 	department = "Научный"
 	department_flag = SCI
 
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "Директору Исследований и Старшему Исследователю"
 	selection_color = "#633d63"
 	economic_power = 6
@@ -164,8 +164,8 @@
 	department = "Научный"
 	department_flag = SCI
 
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "Директору Исследований и остальному научному персоналу"
 	selection_color = "#633d63"
 	economic_power = 3

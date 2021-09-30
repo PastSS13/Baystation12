@@ -842,6 +842,17 @@
 		remove_bulb()
 	return TRUE
 
+/obj/effect/sun
+	name = "sun"
+	desc = "You really shouldn't be seeing this."
+	invisibility = 101
+
+	anchored = 1
+	//light_color = "#"
+/obj/effect/sun/New()
+	set_light(6, 1)
+
 #undef LIGHT_STAGE_COMPLETE
 #undef LIGHT_STAGE_WIRED
 #undef LIGHT_STAGE_EMPTY
+

@@ -34,7 +34,9 @@
 	var/list/ambient_background = null
 	var/environment = 0
 	var/safezone = 0
+	var/outdoors = FALSE
 	var/controlled_by = null
+
 
 /area/New()
 	icon_state = ""

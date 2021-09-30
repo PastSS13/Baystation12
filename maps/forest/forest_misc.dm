@@ -9,6 +9,39 @@
 /obj/structure/flora/tree/dead/firewood
 	alpha = 170
 
+/obj/structure/flora/zarosli
+	name = "Заросли"
+	icon_state = "tall_grass_5"
+	icon = 'icons/stalker/fallout/flora.dmi'
+	opacity = 1
+	layer = ABOVE_HUMAN_LAYER
+
+/obj/structure/flora/zarosli/Initialize()
+	. = ..()
+	icon_state = pick("tall_grass_[rand(5,9)]")
+
+/obj/structure/flora/zarosli_tall
+	name = "Заросли"
+	icon_state = "very_tall_grass_5"
+	icon = 'icons/stalker/fallout/flora.dmi'
+	opacity = 1
+	layer = ABOVE_HUMAN_LAYER
+
+/obj/structure/flora/zarosli_tall/Initialize()
+	. = ..()
+	icon_state = pick("very_tall_grass_[rand(5,8)]")
+
+/obj/structure/flora/zarosli_small
+	name = "Заросли"
+	icon_state = "tall_grass_1"
+	icon = 'icons/stalker/fallout/flora.dmi'
+	opacity = 1
+	layer = ABOVE_HUMAN_LAYER
+
+/obj/structure/flora/zarosli_small/Initialize()
+	. = ..()
+	icon_state = pick("tall_grass_[rand(1,4)]")
+
 /obj/structure/flora/tree/dead/firewood/attackby(obj/item/I, mob/user, params)
 	..()
 	if (istype(I, /obj/item/material/hatchet||/obj/item/material/twohanded/fireaxe))

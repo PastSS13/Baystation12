@@ -25,40 +25,42 @@ obj/machinery/campfire/barrel
 
 /obj/machinery/campfire/attack_hand(mob/user)
 	..()
+
 	if(!on || do_after_check)
 
+		user.visible_message("<span class='notice'>Ну и чё тушить?</span>")
+		return
+	if(on || do_after_check)
+
+
 		user.visible_message("<span class='notice'>[user] started extinguishing a fire...</span>", "<span class='notice'>You started extinguishing a fire...</span>")
+		sound_playing = 0
+
+
 		do_after_check = 1
+		user.visible_message("<span class='green'>[user] extinguished a fire.</span>", "<span class='green'>You extinguished a fire.</span>")
+		desc = initial(desc)
+		on = 0
+		icon_state = ("barrel0")
+		set_light(0)
 
-	if(!do_after(user, 10, 1, src))
-		do_after_check = 0
-		return
 
-	do_after_check = 1
+/obj/machinery/campfire/attackby(obj/item/I as obj, mob/user as mob, params)
+	..()
+	if(isflamesource(I) || is_hot(I))
+		if(do_after(user,40))
 
-	user.visible_message("<span class='green'>[user] extinguished a fire.</span>", "<span class='green'>You extinguished a fire.</span>")
-	desc = initial(desc)
-	on = !on
-	icon_state = ("barrel0")
-	set_light(0)
-
-/obj/machinery/campfire/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/flame))
-
-		usr.visible_message("[usr] lit a fire.", "<span class='notice'>You lit a fire.</span>")
-		icon_state = ("barrel1")
-		desc = "От костра исходит тёпло и мягкий свет."
-		set_temperature = 290
-		set_light(campfire_max_bright, campfire_inner_range, campfire_outer_range,\
+			usr.visible_message("[usr] lit a fire.", "<span class='notice'>You lit a fire.</span>")
+			icon_state = ("barrel1")
+			on = 1
+			desc = "От костра исходит тёпло и мягкий свет."
+			temperature = 300
+			set_light(campfire_max_bright, campfire_inner_range, campfire_outer_range,\
 																								l_color = LIGHT_COLOR_FIRE)
-		return
+			return
 
-/obj/machinery/campfire/barrel/on
 
-	icon_state = ("barrel1")
-	desc = "От костра исходит тёпло и мягкий свет."
-	set_temperature = 290
-	set_light(campfire_max_bright, campfire_inner_range, campfire_outer_range,\
-																								l_color = LIGHT_COLOR_FIRE)
+
+
 
 

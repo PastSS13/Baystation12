@@ -7,6 +7,9 @@
 	var/turf_flags
 
 	var/holy = 0
+	var/outdoors = FALSE
+	var/interior = 0
+
 
 	// Initial air contents (in moles)
 	var/list/initial_gas
@@ -44,8 +47,16 @@
 	. = ..()
 	if(dynamic_lighting)
 		luminosity = 0
+
 	else
 		luminosity = 1
+
+	if(loc.type in interior_areas)
+		interior = 1
+	//else if(src.type in exterior_turfs)
+	//	interior = 0
+	else
+		interior = 0
 
 	RecalculateOpacity()
 
@@ -403,3 +414,14 @@ var/const/enterloopsanity = 100
 		return FALSE
 	LAZYREMOVE(dangerous_objects, O)
 	UNSETEMPTY(dangerous_objects) // This nulls the list var if it's empty.
+
+/turf/proc/update_starlight()
+	if(!config.starlight)
+//		world << "no starlight cfg aborting"
+		return
+	if(interior)
+//		world << "turf isn't interior aborting"
+		return
+
+	if(prob(10))
+		new/obj/effect/sun(loc)

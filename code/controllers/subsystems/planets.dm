@@ -53,8 +53,7 @@ SUBSYSTEM_DEF(planets)
 			return
 		if(is_edge)
 			P.planet_floors -= T
-		else
-			P.planet_walls -= T
+
 		T.vis_contents -= P.weather_holder.visuals
 		T.vis_contents -= P.weather_holder.special_visuals
 
@@ -71,15 +70,7 @@ SUBSYSTEM_DEF(planets)
 		if(!initial && MC_TICK_CHECK)
 			return
 
-	currentlist = new_outdoor_walls
-	while(currentlist.len)
-		var/turf/unsimulated/wall/planetary/PW = currentlist[currentlist.len]
-		currentlist.len--
-		if(istype(PW) && z_to_planet.len >= PW.z && z_to_planet[PW.z])
-			var/datum/planet/P = z_to_planet[PW.z]
-			P.planet_walls |= PW
-		if(!initial && MC_TICK_CHECK)
-			return
+
 
 /datum/controller/subsystem/planets/proc/unallocateTurf(var/turf/simulated/T)
 	if(istype(T) && z_to_planet[T.z])
@@ -170,9 +161,6 @@ SUBSYSTEM_DEF(planets)
 
 /datum/controller/subsystem/planets/proc/updateTemp(var/datum/planet/P)
 	//Set new temperatures
-	for(var/W in P.planet_walls)
-		var/turf/unsimulated/wall/planetary/wall = W
-		wall.set_temperature(P.weather_holder.temperature)
 		CHECK_TICK
 
 /datum/controller/subsystem/planets/proc/weatherDisco()

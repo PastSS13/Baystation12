@@ -505,20 +505,42 @@
 
 /obj/item/clothing/suit/armor/bombsuit
 	icon = 'icons/stalker/d2k5/mob/suit.dmi'
+	desc = "Модифицированный костюм рад.защиты, вставлена бронепластина, как раз под нужды нового мира."
 	icon_state = "rad1"
 	item_state = "bombsuit"
 	item_icons = list(slot_wear_suit_str = 'icons/stalker/d2k5/mob/suit.dmi')
 	armor = list(
 		melee = ARMOR_MELEE_VERY_HIGH,
-		bullet = ARMOR_BALLISTIC_MINOR,
+		bullet = 50,
 		laser = ARMOR_LASER_SMALL,
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = 60,
-		rad = ARMOR_RAD_SHIELDED
+		rad = 90
 		)
-	body_parts_covered = UPPER_TORSO | LOWER_TORSO| ARMS | HEAD| HANDS| LEGS| FEET
+	body_parts_covered = UPPER_TORSO | LOWER_TORSO| ARMS | HANDS| LEGS| FEET
 
 /obj/item/clothing/suit/armor/bombsuit/New()
 	..()
 	slowdown_per_slot[slot_wear_suit] = 2
+
+/obj/item/clothing/head/hood
+	name = "hood"
+	desc = "Надевай колпак, хорошая защита."
+	icon = 'icons/stalker/d2k5/mob/suit.dmi'
+	icon_state = "head_bomb"
+	item_state = "head_bomb.mob"
+	icon_override = 'icons/stalker/d2k5/mob/suit.dmi'
+	armor = list(
+		melee = 50,
+		bullet = 40,
+		laser = ARMOR_LASER_SMALL,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_SHIELDED,
+		rad = 90
+		)
+	flags_inv = HIDEEARS|BLOCKHAIR
+	body_parts_covered = HEAD|FACE|EYES
+	siemens_coefficient = 0
+	tint = 2
+
 
