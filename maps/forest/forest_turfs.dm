@@ -6,7 +6,7 @@
 	var/print_alpha = 255
 	movement_delay = 1
 	outdoors = 1
-
+	temperature = 250
 /turf/simulated/floor/exoplanet/ice
 
 	outdoors = 1
@@ -19,6 +19,7 @@
 	reagent_type = /datum/reagent/toxin/tar
 	movement_delay = 12
 	outdoors = 1
+	temperature = 250
 	turf/simulated/floor/exoplanet/water/shallow/get_footstep_sound(mob/caller)
 		return get_footstep(/decl/footsteps/water, caller)
 
@@ -31,6 +32,7 @@
 	reagent_type = /datum/reagent/toxin/tar
 	dirt_color = "#3e3960"
 	outdoors = 1
+	temperature = 250
 
 /turf/simulated/floor/plasteels/tile/monofloor/cataclysmdda/alt2
 	outdoors = 1

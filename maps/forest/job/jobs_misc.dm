@@ -90,6 +90,7 @@
 	latejoin_at_spawnpoints = 1
 	account_allowed = 0
 	skill_points = 25
+	availablity_chance = 50
 	alt_titles = list(
         "Bandit",
         )

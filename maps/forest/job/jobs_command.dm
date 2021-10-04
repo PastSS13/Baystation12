@@ -43,7 +43,7 @@
 	От капитана ожидают проявления эффективных управленческих навыков, чтобы обеспечить бесперебойную работу всех отделов. Он является высшим авторитетом на Сьерре и имеет доступ к любому отсеку на борту, а также возможность выносить приказы практически без ограничений."
 
 /datum/job/hop
-	title = "Head of Personnel"
+	title = "Comendant"
 	supervisors = "Капитану"
 	department = "Командный"
 	department_flag = COM|SRV
@@ -54,7 +54,7 @@
 	minimal_player_age = 21
 	economic_power = 12
 	ideal_character_age = 45
-	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/hop
+	outfit_type = /decl/hierarchy/outfit/job/sierra/crew/command/battle_hop
 	allowed_branches = list(
 		/datum/mil_branch/employee
 	)
@@ -67,7 +67,10 @@
 	)
 
 	max_skill = list(
-		SKILL_PILOT			=	SKILL_MAX
+		SKILL_PILOT			=	SKILL_MAX,
+		  SKILL_COMBAT      = SKILL_MAX,
+	      SKILL_WEAPONS     = SKILL_MAX
+
 	)
 
 	skill_points = 20

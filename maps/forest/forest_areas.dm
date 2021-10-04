@@ -3,7 +3,6 @@
 	icon_state = "ai"
 	base_turf = /turf/simulated/floor/asteroid/aired
 	sound_env = LARGE_ENCLOSED
-	area_flags = AREA_FLAG_NO_MODIFY
 	environment = 1
 	base_turf = /turf/simulated/floor/asteroid/aired
 
@@ -27,6 +26,12 @@
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	req_access = list(access_mailsorting, access_cargo)
 
+/area/forest/survivors_cave/comendant
+	name = "\improper Survivors Cave Comendant"
+	icon_state = "med"
+	sound_env = SMALL_ENCLOSED
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	req_access = list(access_hop)
 
 /area/forest/pod
 	name = "\improper Crashed Pod"
@@ -139,7 +144,6 @@
 /area/forest/city_ruins
 	name = "\improper city ruins"
 	icon_state = "medbay"
-	area_flags = AREA_FLAG_NO_MODIFY
 
 
 /area/forest/teleporter

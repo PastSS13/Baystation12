@@ -264,3 +264,36 @@
 /datum/say_list/goat/king
 	emote_hear = list("brays in a booming voice")
 	emote_see = list("stamps a mighty foot, shaking the surroundings")
+
+
+
+/mob/living/simple_animal/hostile/retaliate/goat/king/horror
+	name = "BioTerror"
+	desc = "Нечто, одетое в толстый бронированный плащ, в области лица плотно закреплён противогаз, больше двух метров ростом и вселяет ужас. Ваш ночной кошмар."
+	icon = 'icons/stalker/some_stuff/SCPCommissionPackage.dmi'
+	icon_state = "scp-plaguedoctor"
+	icon_living = "scp-plaguedoctor"
+	icon_dead = "scp-plaguedoctor-dead"
+	speak_emote = list("шепчет")
+	meat_amount = 12
+	response_help  = "placates"
+	response_harm   = "assaults"
+	health = 700
+	maxHealth = 700
+	mob_size = MOB_LARGE
+	mob_bump_flag = HEAVY
+	can_escape = TRUE
+	move_to_delay = 3
+	min_gas = null
+	max_gas = null
+	minbodytemp = 0
+	break_stuff_probability = 35
+	flash_vulnerability = 0
+	var/datum/sound_token/horror_theme
+	var/sound_id = "horror"
+/mob/living/simple_animal/hostile/retaliate/goat/king/horror/Initialize()
+	. = ..()
+	horror_theme = GLOB.sound_player.PlayLoopingSound(src,sound_id, 'ND/-_.ogg', volume = 50, range = 14, falloff = 4, prefer_mute = TRUE)
+
+
+

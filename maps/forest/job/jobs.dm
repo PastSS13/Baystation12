@@ -26,7 +26,7 @@
 									/datum/job/qm,\
 									/datum/job/senior_engineer, /datum/job/senior_doctor,\
 									/*/datum/job/stowaway,*/ /datum/job/senior_scientist),
-		/* /datum/species/human/booster= list(HUMAN_ONLY_JOBS,\
+		/*/datum/species/human/booster = list(HUMAN_ONLY_JOBS,\
 									/datum/job/adjutant, /datum/job/exploration_leader, /datum/job/senior_engineer,\
 									/datum/job/warden, /datum/job/detective, /datum/job/officer,
 									/datum/job/qm, /datum/job/senior_scientist) */

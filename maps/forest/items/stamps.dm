@@ -1,5 +1,5 @@
 /obj/item/stamp/hop
-	name = "head of personel's rubber stamp"
+	name = "Comendant's rubber stamp"
 	icon_state = "stamp-xo"
 
 /obj/item/stamp/hos

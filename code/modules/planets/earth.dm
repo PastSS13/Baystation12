@@ -199,6 +199,9 @@ datum/weather/sif
 		WEATHER_HAIL = 5,
 		WEATHER_OVERCAST = 5
 		)
+	var/next_lightning_strike = 1 // world.time when lightning will strike.
+	var/min_lightning_cooldown = 5 SECONDS
+	var/max_lightning_cooldown = 1 MINUTE
 /*
 /datum/weather/sif/snow/process_effects()
 	..()
@@ -222,7 +225,11 @@ datum/weather/sif
 		WEATHER_BLIZZARD = 40,
 		WEATHER_HAIL = 10,
 		WEATHER_OVERCAST = 5
+
 		)
+	var/next_lightning_strike = 1 // world.time when lightning will strike.
+	var/min_lightning_cooldown = 5 SECONDS
+	var/max_lightning_cooldown = 1 MINUTE
 /*
 /datum/weather/sif/blizzard/process_effects()
 	..()
@@ -323,6 +330,20 @@ datum/weather/sif
 // This gets called to do lightning periodically.
 // There is a seperate function to do the actual lightning strike, so that badmins can play with it.
 /datum/weather/sif/storm/proc/handle_lightning()
+	if(world.time < next_lightning_strike)
+		return // It's too soon to strike again.
+	next_lightning_strike = world.time + rand(min_lightning_cooldown, max_lightning_cooldown)
+	var/turf/T = pick(holder.our_planet.planet_floors) // This has the chance to 'strike' the sky, but that might be a good thing, to scare reckless pilots.
+	lightning_strike(T)
+
+/datum/weather/sif/blizzard/proc/handle_lightning()
+	if(world.time < next_lightning_strike)
+		return // It's too soon to strike again.
+	next_lightning_strike = world.time + rand(min_lightning_cooldown, max_lightning_cooldown)
+	var/turf/T = pick(holder.our_planet.planet_floors) // This has the chance to 'strike' the sky, but that might be a good thing, to scare reckless pilots.
+	lightning_strike(T)
+
+/datum/weather/sif/ash/proc/handle_lightning()
 	if(world.time < next_lightning_strike)
 		return // It's too soon to strike again.
 	next_lightning_strike = world.time + rand(min_lightning_cooldown, max_lightning_cooldown)

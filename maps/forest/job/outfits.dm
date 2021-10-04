@@ -60,11 +60,20 @@ Keeping them simple for now, just spawning with basic EC uniforms, and pretty mu
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	shoes = /obj/item/clothing/shoes/laceup
 	id_types = list(/obj/item/card/id/sierra/silver)
+
 //	pda_type = /obj/item/modular_computer/pda/heads/hop
 
 /decl/hierarchy/outfit/job/sierra/crew/command/hop/New()
 	..()
 	BACKPACK_OVERRIDE_COMMAND
+
+
+/decl/hierarchy/outfit/job/sierra/crew/command/battle_hop
+	name = OUTFIT_JOB_NAME("Comendant")
+	uniform = /obj/item/clothing/under/solgov/fleet/special/officer
+	l_ear = /obj/item/device/radio/headset/heads/hop
+	shoes = /obj/item/clothing/shoes/jackboots
+	id_types = list(/obj/item/card/id/sierra/silver)
 
 /decl/hierarchy/outfit/job/sierra/crew/research/rd
 	name = OUTFIT_JOB_NAME("Research Director - Sierra")
